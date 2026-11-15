@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دام‌نگار | ثبت گزارش بازدید میدانی</title>
+<meta name="theme-color" content="#1f6f5c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2064%2064%27%3E%3Crect%20width=%2764%27%20height=%2764%27%20rx=%2714%27%20fill=%27%231f6f5c%27/%3E%3Cpath%20d=%27M32%209C22%209%2014.5%2016.5%2014.5%2026%2014.5%2038.500%2032%2055%2032%2055S49.500%2038.500%2049.500%2026C49.500%2016.500%2042%209%2032%209Z%27%20fill=%27%23fff%27/%3E%3Cpolyline%20points=%2721%2C28%2027.500%2C28%2030.500%2C19.500%2035%2C36%2038%2C28%2043%2C28%27%20fill=%27none%27%20stroke=%27%231f6f5c%27%20stroke-width=%273.200%27%20stroke-linecap=%27round%27%20stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap">
+<style>
+:root{--bg:#eef3f1;--card:#fff;--ink:#17302b;--mute:#5b7069;--line:#d3dedb;--brand:#1f6f5c;--brand-ink:#fff;--warn:#b4412f;--warn-bg:#fbeae6;--ok-bg:#e1f1ea;--field:#f8fbfa;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b18;--card:#172622;--ink:#e6f1ee;--mute:#95aca5;--line:#2c433d;--brand:#4fb89d;--brand-ink:#08201a;--warn:#ff9d8a;--warn-bg:#3a1f1a;--ok-bg:#1b3a32;--field:#12201c}}
+:root[data-theme="dark"]{--bg:#0f1b18;--card:#172622;--ink:#e6f1ee;--mute:#95aca5;--line:#2c433d;--brand:#4fb89d;--brand-ink:#08201a;--warn:#ff9d8a;--warn-bg:#3a1f1a;--ok-bg:#1b3a32;--field:#12201c}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"VazirLocal","Vazirmatn",Tahoma,"Segoe UI",sans-serif;line-height:1.8;font-size:16px}
+header{background:var(--brand);color:var(--brand-ink);padding:22px 16px 26px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header .wrap{padding:0}
+h1{margin:0;font-size:30px;font-weight:800}
+header p{margin:2px 0 0;opacity:.9;font-size:14px}
+main{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:18px;margin-top:-14px;padding-bottom:40px;align-items:start}
+@media (max-width:820px){main{grid-template-columns:minmax(0,1fr)}}
+section{min-width:0}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+h2{margin:0 0 12px;font-size:18px}
+label,.lbl{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+input[type=text],textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--field);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:inline-block;padding:7px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--field);cursor:pointer;font-size:15px}
+.seg input:checked+span{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:600}
+.seg input:focus-visible+span{outline:3px solid var(--brand);outline-offset:2px}
+.err{color:var(--warn);font-size:13px;min-height:0;margin:3px 0 0}
+.bad{border-color:var(--warn)!important}
+.pct{margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--ok-bg);display:flex;justify-content:space-between;align-items:center}
+.pct b{font-size:26px}
+.bar{height:8px;background:var(--line);border-radius:6px;margin-top:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);width:0;transition:width .25s}
+button{font:inherit;cursor:pointer;border-radius:10px;border:0}
+.go{width:100%;margin-top:16px;padding:11px;background:var(--brand);color:var(--brand-ink);font-weight:800;font-size:16px}
+.ghost{background:transparent;color:var(--mute);border:1px solid var(--line);padding:4px 12px;font-size:13px}
+.note{font-size:13px;color:var(--mute);background:var(--field);border:1px dashed var(--line);border-radius:10px;padding:9px 12px;margin-top:14px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stats div{background:var(--field);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute)}
+.stats b{display:block;font-size:20px;color:var(--ink)}
+.item{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px}
+.item .h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:700}
+.tag{display:inline-block;font-size:12px;padding:1px 10px;border-radius:999px;background:var(--ok-bg);margin-inline-start:6px;font-weight:600}
+.tag.hi{background:var(--warn-bg);color:var(--warn)}
+.meta{color:var(--mute);font-size:13px}
+.item p{margin:6px 0 0;font-size:14px}
+.acts{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.exp{background:var(--brand);color:var(--brand-ink);font-weight:600;padding:5px 14px;font-size:14px}
+.editbar{display:none;background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:8px 12px;font-weight:600;font-size:14px}
+.editbar.on{display:block}
+.cancel{width:100%;margin-top:8px;padding:9px;background:transparent;color:var(--mute);border:1px solid var(--line);display:none}
+.cancel.on{display:block}
+[hidden]{display:none!important}
+.warn{display:none;margin-top:8px;background:var(--warn-bg);color:var(--warn);border-radius:10px;padding:8px 12px;font-size:14px;font-weight:600}
+.warn.on{display:block}
+.geo{margin-top:8px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.geo a{font-size:14px;color:var(--brand)}
+.item a{color:var(--brand)}
+.photos{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}
+.ph{position:relative;width:84px;height:84px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.ph img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;display:block}
+.ph button{position:absolute;top:3px;inset-inline-start:3px;background:rgba(0,0,0,.7);color:#fff;border-radius:50%;width:24px;height:24px;padding:0;font-size:16px;line-height:1}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.thumbs img{width:76px;height:76px;object-fit:cover;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;background:var(--field)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+#lb img{max-width:100%;max-height:100%;border-radius:8px}
+section.full{grid-column:1/-1}
+.fl{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:820px){.fl{grid-template-columns:1fr 1fr}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:14px 0}
+.cards div{background:var(--field);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;color:var(--mute)}
+.cards b{display:block;font-size:20px;color:var(--ink)}
+.sc{overflow-x:auto;margin-top:6px}
+.tb{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+.tb th,.tb td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:right;vertical-align:top}
+.tb th{color:var(--mute);font-weight:600;font-size:13px}
+.sub{margin:18px 0 2px;font-size:15px;font-weight:800}
+.hd{display:flex;align-items:center;gap:12px}.hd .grow{flex:1;min-width:0}
+.logo{width:48px;height:48px;flex:none;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,.85);display:block}.logo svg{width:100%;height:100%;display:block}
+.abbtn{background:rgba(255,255,255,.18);color:var(--brand-ink);border:1px solid rgba(255,255,255,.55);padding:6px 12px;font-size:14px;flex:none}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;display:flex;justify-content:center;overflow:auto;padding:16px}
+.ov .box{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;max-width:600px;width:100%;padding:18px;margin:auto;font-size:15px}
+.ov h2{display:flex;align-items:center;gap:10px}.ov h3{margin:16px 0 4px;font-size:15px}.ov p,.ov li{margin:4px 0;color:var(--ink)}.ov ul{padding-inline-start:20px;margin:4px 0}
+.ov .row2{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:10px 0}.ov .row2 b{color:var(--mute);font-weight:600}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:6px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+@font-face{font-family:"VazirLocal";src:url("fonts/Vazirmatn-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"VazirLocal";src:url("fonts/Vazirmatn-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"VazirLocal";src:url("fonts/Vazirmatn-ExtraBold.woff2") format("woff2");font-weight:800;font-display:swap}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}
+.lbtn{display:inline-block;cursor:pointer;margin:6px 0 0 8px;padding:7px 14px;border-radius:10px;font-size:14px;color:var(--ink)}
+.updbar{position:fixed;inset-inline:12px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:45;max-width:520px;margin:auto;background:var(--ink);color:var(--bg);border-radius:12px;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px}
+.updbar button{background:var(--brand);color:var(--brand-ink);padding:6px 14px;font-weight:700;border-radius:8px}
+.lsearch{display:flex;gap:8px;margin:10px 0 4px}.lsearch input{flex:1;min-width:0}.lsearch select{width:auto;max-width:46%}
+.hint{margin-top:4px;font-size:13px;color:var(--warn)}.hint .ghost{padding:2px 10px}
+.lnk{background:none;border:0;padding:0;color:var(--brand);font:inherit;font-weight:800;cursor:pointer;text-decoration:underline}
+.fubar{background:var(--ok-bg);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-bottom:6px;font-size:14px}
+.fubar select{margin:4px 0}.fubar .ghost{margin:4px 6px 0 0;padding:3px 10px}
+#ownerpage .box{max-width:760px}#rdetail{z-index:42}#choice{z-index:60}
+.pg-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:4px 10px;margin:8px 0;font-size:14px}.kv b{color:var(--mute);font-weight:600}
+.pstat{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin:10px 0}.pstat div{background:var(--field);border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:13px;color:var(--mute)}.pstat b{display:block;font-size:17px;color:var(--ink)}
+.sm{padding:4px 12px;font-size:13px;margin:4px 0 0 6px}
+.opt{display:block;width:100%;text-align:right;margin:6px 0;padding:10px 12px;background:var(--field);border:1px solid var(--line);color:var(--ink);border-radius:10px}.opt small{display:block;color:var(--mute)}
+.ordedit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:6px 0;background:var(--field)}
+.ordedit details{margin-top:8px}.ordedit summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--brand)}
+.ordit{border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:6px 0}
+.ordit select{margin:4px 0;font-size:14px}
+.hist{margin:4px 0;padding-inline-start:18px;font-size:13px}.hist li{margin:2px 0}
+.paper{background:#fff;color:#000;border:1px solid #bbb;border-radius:6px;padding:16px;font-size:14px;line-height:1.7}
+.paper .logo{border:1px solid #000;width:38px;height:38px;flex:none}
+.sh-head{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:8px;flex-wrap:wrap}
+.sh-brand{display:flex;align-items:center;gap:8px;min-width:120px}.sh-title{font-size:20px;font-weight:800;text-align:center;flex:1;min-width:180px}.sh-id{font-size:12px}
+.sh-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:4px 16px;margin:8px 0;font-size:13px}
+.sh-tb{width:100%;border-collapse:collapse;font-size:13px}.sh-tb th,.sh-tb td{border:1px solid #000;padding:4px 6px;text-align:right;vertical-align:top;overflow-wrap:break-word}
+.sh-tb th:first-child,.sh-tb td:first-child{width:2.6em;white-space:nowrap;text-align:center}.sh-tb th{background:#eee;font-weight:700}
+.sh-empty{text-align:center;padding:24px 8px}
+.sh-foot{margin-top:14px;break-inside:avoid;page-break-inside:avoid}.sh-note{border:1px solid #000;min-height:70px;padding:4px 6px}
+.sh-sign{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.sgl{border-bottom:1px solid #000;height:46px}
+#sheet{z-index:44}#sheet .box{max-width:820px}
+@page sheet{size:A4;margin:14mm}
+@media print{
+body[data-print]>*{display:none!important}
+body[data-print="report"] #rdetail:not([hidden]){display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}
+body[data-print="report"] #rdetail .box{border:0!important;max-width:none!important;padding:0!important}
+body[data-print="report"] #rdetail button:not(.lnk),body[data-print="report"] #rdetail .act,body[data-print="report"] #rdetail .pg-top{display:none!important}
+body[data-print="report"] #rdetail button.lnk{text-decoration:none!important;color:#000!important}
+body[data-print="sheet"] #sheet:not([hidden]){display:block!important;position:static!important;background:none!important;padding:0!important;overflow:visible!important}
+#sheet .box{border:0!important;box-shadow:none!important;max-width:none!important;padding:0!important;background:#fff!important}
+#sheet .sh-bar{display:none!important}
+#sheet .paper{border:0!important;padding:0!important;page:sheet;font-size:11pt}
+.paper *{color:#000!important}
+.sh-tb{font-size:9pt}.sh-tb th,.sh-tb td{padding:3px 4px}.sh-tb th{background:transparent!important}.sh-tb thead{display:table-header-group}.sh-tb tr{break-inside:avoid;page-break-inside:avoid}
+.paper .logo{filter:grayscale(1)}
+}
+.dwrap{display:flex;gap:6px;align-items:center}.dwrap input{flex:1;min-width:0}
+.dpbtn{flex:none;width:42px;height:42px;border:1.5px solid var(--line);background:var(--field);border-radius:10px;color:var(--brand);padding:0;display:flex;align-items:center;justify-content:center}
+.dpbtn svg{width:22px;height:22px}
+#jcal{z-index:70;align-items:center}#jcal .box{max-width:380px;padding:14px}
+.jc-top{display:flex;gap:6px;align-items:center;margin-bottom:6px}.jc-top select{flex:1;min-width:0;padding:7px 8px}.jc-top .ghost{padding:6px 8px;font-size:13px;white-space:nowrap}
+.jc-wd,.jc-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;direction:rtl}
+.jc-wd span{text-align:center;font-size:13px;color:var(--mute);font-weight:700;padding:4px 0}
+.jc-wd span:last-child{color:var(--warn)}
+.jc-grid button{height:42px;min-width:0;padding:0;border-radius:10px;background:var(--field);border:1px solid var(--line);color:var(--ink);font-size:15px}
+.jc-grid button.fri{color:var(--warn)}.jc-grid button.today{border:2px solid var(--brand);font-weight:800}
+.jc-grid button.sel{background:var(--brand);border-color:var(--brand);color:var(--brand-ink);font-weight:800}
+.jc-grid i{display:block}
+.jc-foot{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.jc-foot .ghost{flex:1;padding:8px}
+.empty{text-align:center;color:var(--mute);padding:28px 8px}
+#toast{position:fixed;inset-inline:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:360px;margin:auto;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;text-align:center;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<header><div class="wrap hd"><span class="logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1f6f5c"/><path d="M32 9C22 9 14.5 16.5 14.5 26 14.5 38.500 32 55 32 55S49.500 38.500 49.500 26C49.500 16.500 42 9 32 9Z" fill="#fff"/><polyline points="21,28 27.500,28 30.500,19.500 35,36 38,28 43,28" fill="none" stroke="#1f6f5c" stroke-width="3.200" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="grow"><h1>دام‌نگار</h1><p>ثبت گزارش بازدید میدانی دامپزشکان · نسخه <span class="ver"></span> (آزمایشی)<span id="offb" hidden> · آفلاین</span></p></div><button type="button" class="abbtn" id="aboutbtn">درباره برنامه</button></div></header>
+<div class="wrap"><main>
+<section aria-labelledby="t1">
+<h2 id="t1">ثبت گزارش بازدید</h2>
+<form id="f" novalidate onsubmit="return false">
+<div class="fubar" id="fubar" hidden><div>پرونده دامدار: <b id="funame"></b></div>
+<label for="fubase">ویزیت مبنا (اگر این گزارش پیگیری یک بازدید قبلی است)</label><select id="fubase"></select>
+<button type="button" class="ghost" id="fuopen">دیدن پرونده</button><button type="button" class="ghost" id="fuoff">این گزارش به این پرونده مربوط نیست</button></div>
+<div class="editbar" id="editbar">در حال ویرایش یک گزارش ثبت‌شده؛ پس از اصلاح، «ذخیره تغییرات» را بزنید.</div>
+<label for="owner">نام دامدار</label>
+<input type="text" id="owner" list="dl-owner" autocomplete="off" placeholder="نام و نام خانوادگی دامدار">
+<datalist id="dl-owner"></datalist>
+<div class="err" id="e-owner"></div>
+<div class="hint" id="h-owner" hidden><span></span> <button type="button" class="ghost">استفاده از همان</button></div>
+<div class="row"><div><label for="vdate">تاریخ بازدید (شمسی)</label><input type="text" id="vdate" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۱"><div class="err" id="e-vdate"></div>
+<div class="meta" id="vdnote">تاریخ بازدید یا وقوع را از تقویم انتخاب کنید؛ می‌تواند گذشته باشد. تاریخ ثبت در دام‌نگار خودکار است و با آن تغییر نمی‌کند.</div><div class="err" id="vdwarn"></div></div>
+<div><label for="vet">نام دامپزشک (اختیاری)</label><input type="text" id="vet" list="dl-vet" autocomplete="off"><datalist id="dl-vet"></datalist><div class="err" id="e-vet"></div></div></div>
+<div class="lbl" id="ltype">نوع دام</div>
+<div class="seg" role="radiogroup" aria-labelledby="ltype">
+<label><input type="radio" name="type" value="گاو" checked><span>گاو</span></label>
+<label><input type="radio" name="type" value="گاومیش"><span>گاومیش</span></label>
+<label><input type="radio" name="type" value="گوساله"><span>گوساله</span></label>
+<label><input type="radio" name="type" value="گوسفند"><span>گوسفند</span></label>
+<label><input type="radio" name="type" value="بز"><span>بز</span></label>
+<label><input type="radio" name="type" value="اسب"><span>اسب</span></label>
+<label><input type="radio" name="type" value="سگ"><span>سگ</span></label>
+<label><input type="radio" name="type" value="سایر"><span>سایر</span></label>
+</div>
+<label for="village">نام روستا یا محدوده بازدید</label>
+<input type="text" id="village" list="dl-village" autocomplete="off" placeholder="مثلاً: روستای ...">
+<datalist id="dl-village"></datalist>
+<div class="err" id="e-village"></div>
+<div class="hint" id="h-village" hidden><span></span> <button type="button" class="ghost">استفاده از همان</button></div>
+<div class="lbl">موقعیت جغرافیایی (اختیاری)</div>
+<div class="row"><div><label for="lat">عرض جغرافیایی</label><input type="text" id="lat" inputmode="decimal" autocomplete="off" placeholder="مثلاً ۳۶٫۲۸۷۰"><div class="err" id="e-lat"></div></div>
+<div><label for="lon">طول جغرافیایی</label><input type="text" id="lon" inputmode="decimal" autocomplete="off" placeholder="مثلاً ۵۹٫۶۱۵۷"><div class="err" id="e-lon"></div></div></div>
+<div class="geo"><button type="button" class="ghost" id="geobtn">دریافت موقعیت فعلی من</button> <a id="maplink" target="_blank" rel="noopener" hidden>دیدن روی نقشه</a></div>
+<div class="meta" id="geost"></div><div class="err" id="geohint"></div>
+<div class="row">
+<div><label for="total">تعداد کل دام‌های بررسی‌شده</label>
+<input type="text" id="total" inputmode="numeric" autocomplete="off" placeholder="مثلاً ۱۲۰"><div class="err" id="e-total"></div></div>
+<div><label for="sick">تعداد دام‌های دارای نشانه</label>
+<input type="text" id="sick" inputmode="numeric" autocomplete="off" placeholder="مثلاً ۸"><div class="err" id="e-sick"></div></div>
+</div>
+<div class="pct" aria-live="polite"><div>درصد دام‌های دارای نشانه<div class="bar"><i id="barfill"></i></div></div><b id="pct">—</b></div>
+<div class="row"><div><label for="herd">کل دام‌های دامداری (اختیاری)</label><input type="text" id="herd" inputmode="numeric" autocomplete="off"><div class="err" id="e-herd"></div></div>
+<div><label for="dead">تعداد تلفات</label><input type="text" id="dead" inputmode="numeric" autocomplete="off" placeholder="از دام‌های دارای نشانه؛ بدون تلفات: ۰"><div class="err" id="e-dead"></div></div></div>
+<label for="signs">شرح نشانه‌های مشاهده‌شده</label>
+<textarea id="signs" placeholder="مثلاً: تب، کاهش اشتها، لنگش، سرفه ..."></textarea>
+<div class="err" id="e-signs"></div>
+<label for="dx">تشخیص دامپزشک</label>
+<select id="dx"></select>
+<div class="warn" id="dxwarn" role="alert"></div>
+<div id="dxother" hidden>
+<label for="dxcat">گروه بیماری</label>
+<select id="dxcat"><option value="">انتخاب کنید…</option><option>متابولیکی</option><option>عفونی (باکتریایی)</option><option>عفونی (ویروسی)</option><option>انگلی</option><option>تولیدمثلی</option><option>گوارشی</option><option>تنفسی</option><option>پوستی</option><option>سمی یا مسمومیت</option><option>تغذیه‌ای یا کمبودها</option><option>اندام حرکتی</option><option>سایر</option></select>
+<div class="err" id="e-dxcat"></div>
+<label for="dxname">نام بیماری</label>
+<input type="text" id="dxname" autocomplete="off" placeholder="مثلاً: تب شیر">
+<div class="err" id="e-dxname"></div>
+</div>
+<div class="lbl" id="lord">دستورات و اقدامات دامپزشکی <span class="meta" id="ordcount"></span></div>
+<p class="meta" style="margin:2px 0 6px">فقط دستورهایی را ثبت کنید که خودتان صادر کرده‌اید؛ برنامه هیچ دارو، دوز یا توصیه‌ای پیشنهاد نمی‌دهد.</p>
+<div id="ordlist"></div>
+<div class="ordedit" id="ordedit" hidden>
+<label for="o-type">نوع دستور</label><select id="o-type"><option>دارویی و درمانی</option><option>بهداشتی و مدیریتی</option><option>تغذیه‌ای</option><option>واکسیناسیون و پیشگیری</option><option>آزمایش، نمونه‌گیری و تشخیص</option><option>سایر</option></select>
+<label for="o-title">عنوان یا شرح دستور (اجباری)</label><input type="text" id="o-title" autocomplete="off" maxlength="200"><div class="err" id="e-o-title"></div>
+<details id="o-more"><summary>جزئیات اجرا (اختیاری)</summary>
+<label for="o-drug" id="o-druglbl">نام دارو یا ماده</label><input type="text" id="o-drug" autocomplete="off" maxlength="150">
+<div class="row"><div><label for="o-dose">مقدار</label><input type="text" id="o-dose" autocomplete="off" maxlength="60"></div><div><label for="o-unit">واحد</label><input type="text" id="o-unit" list="dl-unit" autocomplete="off" maxlength="40"></div></div>
+<label for="o-route">روش تجویز یا اجرا</label><input type="text" id="o-route" list="dl-route" autocomplete="off" maxlength="60">
+<div class="row"><div><label for="o-freq">دفعات اجرا یا مصرف</label><input type="text" id="o-freq" autocomplete="off" maxlength="100"></div><div><label for="o-dur">مدت اجرا</label><input type="text" id="o-dur" autocomplete="off" maxlength="100"></div></div>
+</details>
+<datalist id="dl-unit"><option value="میلی‌گرم"><option value="گرم"><option value="کیلوگرم"><option value="میلی‌لیتر"><option value="سی‌سی"><option value="لیتر"><option value="واحد بین‌المللی"><option value="دوز"><option value="عدد"></datalist><datalist id="dl-route"><option value="خوراکی"><option value="تزریق عضلانی"><option value="تزریق زیرجلدی"><option value="تزریق وریدی"><option value="داخل پستانی"><option value="موضعی"><option value="از راه آب آشامیدنی"><option value="از راه خوراک"></datalist>
+<div class="row"><div><label for="o-start">تاریخ شروع</label><input type="text" id="o-start" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۱"><div class="err" id="e-o-start"></div></div>
+<div><label for="o-due">مهلت یا تاریخ پیگیری</label><input type="text" id="o-due" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۰۸/۱۵"><div class="err" id="e-o-due"></div></div></div>
+<label for="o-notes">توضیحات تکمیلی</label><textarea id="o-notes" style="min-height:54px" maxlength="600"></textarea>
+<div class="row"><div><label for="o-status">وضعیت اجرا</label><select id="o-status"><option>ثبت‌شده / در انتظار اجرا</option><option>در حال اجرا</option><option>انجام‌شده</option><option>انجام‌نشده</option><option>لغوشده</option></select></div>
+<div><label for="o-last">تاریخ آخرین پیگیری</label><input type="text" id="o-last" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۰۸/۰۱"><div class="err" id="e-o-last"></div></div></div>
+<label for="o-snote">توضیح درباره وضعیت اجرا</label><input type="text" id="o-snote" autocomplete="off" maxlength="400">
+<button type="button" class="go" id="o-save" style="margin-top:8px">ثبت این دستور</button>
+<button type="button" class="cancel on" id="o-cancel">انصراف</button>
+</div>
+<button type="button" class="ghost" id="ordadd" style="margin-top:4px">افزودن دستور</button>
+<span id="orders"></span><div class="err" id="e-orders"></div>
+<div class="ordedit" id="fucheck" hidden><div class="lbl" style="margin-top:0">پیگیری دستورات ویزیت‌های قبلی</div>
+<p class="meta" style="margin:2px 0 6px">گزارش ویزیت مبنا تغییر نمی‌کند؛ نتیجه پیگیری فقط در همین ویزیت جدید ثبت می‌شود و سابقه وضعیت قبلی می‌ماند.</p><div id="fuchecklist"></div></div>
+<div class="lbl">تصویر دامداری یا دام بیمار (اختیاری، حداکثر ۳ تصویر)</div>
+<div class="photos" id="photos"></div>
+<div id="pact"><label class="ghost lbtn" for="pcam" tabindex="0" role="button">گرفتن عکس با دوربین</label><label class="ghost lbtn" for="pfile" tabindex="0" role="button">انتخاب از گالری</label></div>
+<input type="file" id="pcam" accept="image/*" capture="environment" class="vh">
+<input type="file" id="pfile" accept="image/*" multiple class="vh">
+<div class="meta" id="phst"></div>
+<div class="err" id="e-photos"></div>
+<label for="vac">وضعیت واکسیناسیون</label>
+<select id="vac"><option>کاملاً واکسینه</option><option>ناقص یا نامنظم</option><option>واکسینه نشده</option><option selected>نامشخص</option></select>
+<div id="vacbox" hidden>
+<div class="lbl" id="lvt">نوع واکسن دریافتی (می‌توانید چند مورد انتخاب کنید)</div>
+<div class="seg" id="vtypes" role="group" aria-labelledby="lvt"></div>
+<div class="err" id="e-vtypes"></div>
+<div id="vtotherbox" hidden><label for="vtother">نام واکسن دیگر</label><input type="text" id="vtother" autocomplete="off"><div class="err" id="e-vtother"></div></div>
+<label for="vnote">نام برند و توضیحات واکسن (اختیاری)</label>
+<textarea id="vnote" maxlength="300" style="min-height:64px" placeholder="مثلاً: نام برند، سازنده، شماره سری، تاریخ واکسیناسیون…"></textarea>
+<label for="vcount">تعداد دام واکسینه‌شده</label>
+<input type="text" id="vcount" inputmode="numeric" autocomplete="off" placeholder="مثلاً ۱۰۰"><div class="err" id="e-vcount"></div>
+</div>
+<button class="go" id="save">ثبت گزارش</button>
+<button class="cancel" id="cancel" type="button">انصراف از ویرایش</button>
+</form>
+<div class="note">فقط شما در همین مرورگر این گزارش‌ها را می‌بینید. ارقام فارسی و انگلیسی هر دو پذیرفته می‌شوند.</div>
+</section>
+
+<section aria-labelledby="t2">
+<div class="top"><h2 id="t2" style="margin:0">گزارش‌های ثبت‌شده</h2><div class="acts"><button class="exp" id="expx">خروجی Excel</button><button class="ghost" id="bak">پشتیبان‌گیری</button><button class="ghost" id="rst">بازیابی از فایل</button><button class="ghost" id="clear">پاک‌کردن همه</button><input type="file" id="rfile" accept=".json,application/json" hidden></div></div>
+<div class="stats"><div>گزارش‌ها<b id="s1">۰</b></div><div>دام بررسی‌شده<b id="s2">۰</b></div><div>درصد کل دارای نشانه<b id="s3">—</b></div></div>
+<div class="lsearch"><input type="text" id="lq" inputmode="search" autocomplete="off" placeholder="جست‌وجو: دامدار، روستا، نشانه، تشخیص، تاریخ…" aria-label="جست‌وجو در گزارش‌ها"><select id="lsort" aria-label="مرتب‌سازی"><option value="reg">ثبت: جدیدترین</option><option value="vnew">بازدید: جدیدترین</option><option value="vold">بازدید: قدیمی‌ترین</option><option value="owner">نام دامدار</option></select></div>
+<div class="meta" id="lcount"></div>
+<div id="list"></div>
+<div class="note" id="store"></div>
+<div class="meta" id="pers" style="margin-top:8px"></div>
+</section>
+<section class="full" id="epi" aria-labelledby="t3">
+<div class="top"><h2 id="t3" style="margin:0">تحلیل اپیدمیولوژیک</h2><button class="exp" id="epix">خروجی Excel تحلیل</button></div>
+<div class="fl">
+<div><label for="ftype">نوع دام</label><select id="ftype"><option value="">همه</option><option>گاو</option><option>گاومیش</option><option>گوساله</option><option>گوسفند</option><option>بز</option><option>اسب</option><option>سگ</option><option>سایر</option></select></div>
+<div><label for="fdx">تشخیص</label><select id="fdx"><option value="">همه</option></select></div>
+<div><label for="ffrom">از تاریخ بازدید</label><input type="text" id="ffrom" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۰۱/۰۱"></div>
+<div><label for="fto">تا تاریخ بازدید</label><input type="text" id="fto" inputmode="numeric" autocomplete="off" placeholder="۱۴۰۵/۱۲/۲۹"></div>
+</div>
+<div class="err" id="fhint"></div>
+<div id="epiout"></div>
+<div class="note">این اعداد فقط از گزارش‌های همین مرورگر محاسبه می‌شوند. بازدیدهای میدانی معمولاً به‌خاطر شک به بیماری انجام می‌شوند و نمونه‌ی تصادفی نیستند؛ پس شیوع واقعی منطقه را نشان نمی‌دهند و بیشتر از واقعیت دیده می‌شوند. فاصله اطمینان با روش ویلسون و با فرض مستقل‌بودن دام‌ها حساب شده و به‌خاطر خوشه‌ای‌بودن دام‌ها در یک گله، کوچک‌تر از مقدار واقعی است. «نسبت حمله» فقط وقتی معنی دارد که «کل دام‌های دامداری» ثبت شده باشد و همه موارد گله شمرده شده باشند. نرخ بروز واقعی (بر حسب زمان) نیاز به بازه پیگیری دارد و هنوز محاسبه نمی‌شود. این برنامه ابزار پشتیبان است و جای تحلیل و تصمیم دامپزشک و مراجع رسمی را نمی‌گیرد.</div>
+</section>
+</main></div>
+<div id="about" class="ov" hidden role="dialog" aria-modal="true" aria-labelledby="abt">
+<div class="box">
+<h2 id="abt"><span class="logo" style="width:40px;height:40px;border-color:var(--line)" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1f6f5c"/><path d="M32 9C22 9 14.5 16.5 14.5 26 14.5 38.500 32 55 32 55S49.500 38.500 49.500 26C49.500 16.500 42 9 32 9Z" fill="#fff"/><polyline points="21,28 27.500,28 30.500,19.500 35,36 38,28 43,28" fill="none" stroke="#1f6f5c" stroke-width="3.200" stroke-linecap="round" stroke-linejoin="round"/></svg></span>درباره دام‌نگار</h2>
+<div class="row2"><b>نام برنامه</b><span>دام‌نگار</span><b>سازنده (نام نمایشی)</b><span>سوما زیست</span><b>نسخه</b><span><span class="ver"></span> (آزمایشی)</span><b>تاریخ نسخه</b><span>۱۴۰۵/۰۸/۰۹ (۲۰۲۶/۱۰/۳۱)</span><b>راه ارتباطی</b><span id="contact"></span></div>
+<h3>این برنامه چیست؟</h3>
+<p>ابزاری فارسی برای ثبت گزارش بازدید میدانی دامپزشکی، پایش بیماری‌ها و محاسبه شاخص‌های ساده اپیدمیولوژیک از گزارش‌های ثبت‌شده.</p>
+<h3>داده‌ها کجا هستند؟</h3>
+<ul><li>گزارش‌ها و عکس‌ها در حافظه محلی همین مرورگر و همین دستگاه ذخیره می‌شوند. برنامه برای ذخیره آن‌ها از سرور اختصاصی استفاده نمی‌کند و حساب کاربری یا همگام‌سازی ابری ندارد.</li>
+<li>پاک‌کردن اطلاعات مرورگر، تعویض دستگاه یا باز کردن برنامه از یک مبدأ وب دیگر (مثلاً رفتن از فایل روی گوشی به یک آدرس https) می‌تواند دسترسی به اطلاعات قبلی را مختل کند. پیش از هر انتقال پشتیبان بگیرید و در مقصد «بازیابی از فایل» را بزنید.</li>
+<li id="abpers" class="meta"></li></ul>
+<h3>پرونده دامدار و ویزیت پیگیری</h3>
+<ul><li>هر دامدار یک پرونده دارد که همه بازدیدهایش را نشان می‌دهد. روی نام دامدار در فهرست بزنید.</li>
+<li>پرونده‌ها با شناسه ساخته می‌شوند، نه فقط با نام. دامدار هم‌نام در روستای دیگر خودکار ادغام نمی‌شود؛ برنامه می‌پرسد، و ادغام یا جداکردن دستی هم ممکن است.</li>
+<li>ویزیت پیگیری یک گزارش جدید و مستقل است که به بازدید مبنا وصل می‌شود و آن بازدید را تغییر نمی‌دهد.</li>
+<li>اگر گزارشی را که ویزیت پیگیری دارد از پرونده جدا کنید، برنامه می‌پرسد پیگیری‌ها هم منتقل شوند یا فقط ارتباط‌شان قطع شود. هنگام بازیابی پشتیبان هم ارتباط‌های نامعتبر پیگیری (به خودش، بین دو دامدار متفاوت یا چرخه‌ای) قطع و اعلام می‌شود.</li>
+<li>هنگام ارتقا برای گزارش‌های قبلی پرونده ساخته می‌شود و یک نسخه ایمن از گزارش‌های قبلی در حافظه مرورگر نگه‌داری می‌شود (با «پاک‌کردن همه» حذف می‌شود).</li></ul>
+<h3>دستورات و اقدامات دامپزشکی</h3>
+<ul><li>برای هر ویزیت می‌توانید چند دستور (دارویی، بهداشتی، تغذیه‌ای، واکسیناسیون، آزمایش و غیره) ثبت کنید. برنامه هیچ دارو، دوز یا توصیه‌ای پیشنهاد نمی‌دهد؛ همه اطلاعات را خودتان وارد می‌کنید.</li>
+<li>در ویزیت پیگیری می‌توانید وضعیت اجرای دستورات قبلی را ثبت کنید. گزارش ویزیت مبنا تغییر نمی‌کند و سابقه وضعیت‌ها می‌ماند.</li>
+<li>از صفحه جزئیات هر ویزیت می‌توانید «برگه دستورات دامپزشکی» را ببینید و چاپ کنید (A4؛ فقط دستورات همان ویزیت؛ جای امضا خالی می‌ماند). برای ذخیره PDF در پنجره چاپ مرورگر «Save as PDF» را انتخاب کنید.</li>
+<li>دستورات همراه گزارش‌شان در پشتیبان JSON و (در برگه‌های جدا) در Excel هستند.</li></ul>
+<h3>تاریخ‌ها</h3>
+<ul><li>همه فیلدهای تاریخ یک انتخابگر تقویم شمسی دارند (دکمه کنار فیلد؛ روی موبایل با لمس خود فیلد). تقویم داخل برنامه است و به اینترنت نیاز ندارد.</li>
+<li><b>تاریخ بازدید یا وقوع</b> را شما انتخاب می‌کنید و می‌تواند گذشته باشد (ثبت گذشته‌نگر). <b>تاریخ ثبت در دام‌نگار</b> را برنامه هنگام ساخت گزارش خودکار می‌گذارد و با ویرایش یا تغییر تاریخ بازدید عوض نمی‌شود.</li></ul>
+<h3>خروجی‌ها</h3>
+<ul><li><b>پشتیبان‌گیری (JSON):</b> می‌تواند شامل گزارش‌ها و عکس‌های ذخیره‌شده باشد. اگر عکسی در حافظه پیدا نشود، برنامه هنگام ساخت پشتیبان هشدار می‌دهد.</li>
+<li><b>خروجی Excel:</b> اطلاعات گزارش‌ها و «تعداد» عکس‌های پیوست‌شده را دارد، نه خود تصویرها.</li>
+<li>این فایل‌ها نام دامدار، مختصات و عکس دارند؛ با دقت نگه‌داری شوند.</li></ul>
+<h3>حریم خصوصی و ارتباط‌های اینترنتی</h3>
+<ul><li>برنامه گزارش‌ها، مختصات و عکس‌ها را به هیچ سرویسی نمی‌فرستد.</li>
+<li>دو ارتباط اینترنتی جداگانه وجود دارد: دریافت فونت از Google Fonts هنگام باز شدن صفحه، و بازشدن نقشه OpenStreetMap وقتی خودتان روی «دیدن روی نقشه» بزنید.</li></ul>
+<h3>نصب و کار بدون اینترنت</h3>
+<ul><li>وقتی برنامه از یک آدرس https باز شود، می‌توان آن را نصب کرد (اندروید و Chrome: منوی ⋮ ← «نصب برنامه» یا «افزودن به صفحه اصلی»؛ آیفون و Safari: دکمه اشتراک‌گذاری ← «Add to Home Screen»). پس از نصب بدون اینترنت هم باز می‌شود.</li>
+<li>نسخه جدید برنامه فقط وقتی دریافت می‌شود که یک بار با اینترنت باز کنید؛ آن‌گاه نواری «نسخه جدید آماده است» می‌آید و با زدن آن عوض می‌شود. گزارش‌ها از بین نمی‌روند.</li>
+<li>کار بدون اینترنت داده‌ها را همچنان فقط روی همین دستگاه نگه می‌دارد؛ پشتیبان‌گیری منظم لازم است.</li>
+<li id="instst" class="meta"></li></ul>
+<button type="button" class="ghost" id="instbtn" hidden>نصب برنامه روی این دستگاه</button>
+<h3>محدودیت‌های علمی</h3>
+<ul><li>برنامه ابزار ثبت و پشتیبان است و جای تشخیص و تصمیم دامپزشک و مراجع رسمی را نمی‌گیرد. تشخیص خودکار یا هوش مصنوعی ندارد.</li>
+<li><b>جایگزین گزارش‌دهی رسمی به سازمان دامپزشکی نیست.</b> گزارش بیماری‌های قابل اعلام باید از مسیر رسمی و در مهلت قانونی انجام شود؛ هشدار و برچسب «قابل اعلام» در برنامه فقط یادآوری است.</li>
+<li>فهرست بیماری‌های قابل اعلام بر پایه فهرست WOAH است، نه فهرست رسمی سازمان دامپزشکی ایران؛ پیش از اتکا بررسی شود.</li>
+<li>بازدیدهای میدانی معمولاً به‌خاطر شک به بیماری‌اند و نمونه تصادفی نیستند؛ پس شاخص‌ها شیوع واقعی منطقه را نشان نمی‌دهند. فاصله‌های اطمینان خوشه‌ای‌بودن گله‌ها را در نظر نمی‌گیرند.</li></ul>
+<h3>مجوزها و منابع</h3>
+<ul><li>فونت وزیرمتن (Vazirmatn) با مجوز SIL Open Font License.</li><li>بقیه کد (از جمله ساخت فایل Excel) داخل خود برنامه نوشته شده و کتابخانه خارجی ندارد.</li></ul>
+<p class="meta" style="margin-top:12px">«سوما زیست» نام نمایشی سازنده است و این صفحه ادعای ثبت رسمی یا علامت تجاری ندارد.</p>
+<button type="button" class="go" id="abx">بستن</button>
+</div></div>
+<footer>دام‌نگار · ساخته‌شده توسط سوما زیست · نسخه <span class="ver"></span></footer>
+<div id="upd" class="updbar" hidden role="status"><span>نسخه جدید دام‌نگار آماده است. پیش از بارگذاری مجدد، فرم نیمه‌کاره را ذخیره کنید.</span><button type="button" id="updbtn">بارگذاری مجدد</button></div>
+<div id="ownerpage" class="ov" hidden role="dialog" aria-modal="true" aria-labelledby="pgt"><div class="box"><div class="pg-top"><h2 id="pgt" style="margin:0"></h2><button type="button" class="ghost" id="pgx">بازگشت به فهرست</button></div><div id="pbody"></div></div></div>
+<div id="rdetail" class="ov" hidden role="dialog" aria-modal="true" aria-label="گزارش کامل"><div class="box"><div class="pg-top"><h2 style="margin:0">گزارش کامل</h2><button type="button" class="ghost" id="rdx">بستن</button></div><div id="rbody"></div></div></div>
+<div id="sheet" class="ov" hidden role="dialog" aria-modal="true" aria-label="برگه دستورات دامپزشکی"><div class="box"><div class="pg-top sh-bar"><h2 style="margin:0">پیش‌نمایش برگه دستورات</h2><span><button type="button" class="ghost" id="shprint">چاپ برگه</button> <button type="button" class="ghost" id="shx">بستن</button></span></div><div id="shpaper" class="paper" dir="rtl"></div></div></div>
+<div id="jcal" class="ov" hidden role="dialog" aria-modal="true" aria-label="انتخاب تاریخ شمسی"><div class="box"><div class="jc-top"><button type="button" class="ghost" id="jc-py">سال قبل</button><select id="jc-y" aria-label="سال"></select><button type="button" class="ghost" id="jc-ny">سال بعد</button></div>
+<div class="jc-top"><button type="button" class="ghost" id="jc-pm">ماه قبل</button><select id="jc-m" aria-label="ماه"></select><button type="button" class="ghost" id="jc-nm">ماه بعد</button></div>
+<div class="jc-wd" id="jc-wd"></div><div class="jc-grid" id="jc-grid"></div>
+<div class="jc-foot"><button type="button" class="ghost" id="jc-today">امروز</button><button type="button" class="ghost" id="jc-clear">پاک کردن تاریخ</button><button type="button" class="ghost" id="jc-x">بستن</button></div></div></div>
+<div id="choice" class="ov" hidden role="dialog" aria-modal="true" aria-labelledby="cht"><div class="box"><h2 id="cht" style="margin-top:0"></h2><p id="chm"></p><div id="cho"></div><button type="button" class="ghost" id="chx" style="margin-top:8px">انصراف</button></div></div>
+<div id="lb" hidden role="dialog" aria-label="نمایش تصویر"><img id="lbi" alt=""></div>
+<div id="toast" role="status"></div>
+<script>
+(function(){
+var KEY="damnegar:reports:v1", mem=[], canStore=true;
+var nf=new Intl.NumberFormat("fa-IR",{maximumFractionDigits:1});
+var df=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{dateStyle:"medium",timeStyle:"short"});
+var $=function(i){return document.getElementById(i)};
+function load(){if(!canStore)return mem;try{var r=localStorage.getItem(KEY);return r?JSON.parse(r):[]}catch(e){canStore=false;return mem}}
+function save(a){mem=a;try{localStorage.setItem(KEY,JSON.stringify(a));canStore=true;try{localStorage.setItem("damnegar:changed",String(Date.now()))}catch(e){}return true}catch(e){canStore=false;return false}}
+function digits(s){return s.replace(/[۰-۹]/g,function(d){return "۰۱۲۳۴۵۶۷۸۹".indexOf(d)}).replace(/[٠-٩]/g,function(d){return "٠١٢٣٤٥٦٧٨٩".indexOf(d)}).trim()}
+function num(id){var v=digits($(id).value);return /^\d+$/.test(v)?parseInt(v,10):NaN}
+function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML}
+function pct(a,b){return b>0?a/b*100:NaN}
+function live(){var t=num("total"),s=num("sick"),p=pct(s,t);
+ var ok=!isNaN(p)&&s<=t;
+ $("pct").textContent=ok?nf.format(p)+"٪":"—";
+ $("barfill").style.width=ok?Math.min(100,p)+"%":"0"}
+function setErr(id,msg){$("e-"+id).textContent=msg||"";$(id).classList.toggle("bad",!!msg)}
+function validate(){
+ var ok=true,v=$("village").value.trim(),t=num("total"),s=num("sick"),g=$("signs").value.trim();
+ setErr("village",v.length<2?"نام روستا یا محدوده را بنویسید.":"");if(v.length<2)ok=false;
+ var et="";if(isNaN(t)||t<1)et="یک عدد صحیح و بزرگ‌تر از صفر بنویسید.";else if(t>100000)et="عدد واردشده غیرمعمول است.";
+ setErr("total",et);if(et)ok=false;
+ var es="";if(isNaN(s))es="یک عدد صحیح بنویسید (در صورت نبود نشانه، صفر).";else if(!isNaN(t)&&s>t)es="تعداد دام‌های دارای نشانه نمی‌تواند از تعداد کل بیشتر باشد.";
+ setErr("sick",es);if(es)ok=false;
+ var eg="";if(!isNaN(s)&&s>0&&g.length<1)eg="چون دام دارای نشانه ثبت کرده‌اید، نشانه‌ها را شرح دهید.";
+ setErr("signs",eg);if(eg)ok=false;
+ if($("owner").value.trim().length<2){setErr("owner","نام دامدار را بنویسید.");ok=false}else setErr("owner","");
+ if(ordersDirtyError())ok=false;
+ ["vtypes","vtother","vcount"].forEach(function(i){setErr(i,"")});
+ if(vacOn()){var vt=selVax(),vc=num("vcount"),tt=num("total");
+  if(!vt.length){setErr("vtypes","حداقل یک نوع واکسن را انتخاب کنید.");ok=false}
+  if(vt.indexOf("سایر")>=0&&$("vtother").value.trim().length<2){setErr("vtother","نام واکسن را بنویسید.");ok=false}
+  if(isNaN(vc)||vc<1){setErr("vcount","تعداد را به‌صورت عدد صحیح و بزرگ‌تر از صفر بنویسید.");ok=false}
+  else if(!isNaN(tt)&&vc>tt){setErr("vcount","تعداد واکسینه‌شده نمی‌تواند از تعداد کل دام‌ها بیشتر باشد.");ok=false}}
+ setErr("dxcat","");setErr("dxname","");
+ if($("dx").value==="سایر"){
+  if(!$("dxcat").value){setErr("dxcat","گروه بیماری را انتخاب کنید.");ok=false}
+  if($("dxname").value.trim().length<2){setErr("dxname","نام بیماری را بنویسید.");ok=false}}
+ var la=decNum("lat"),lo=decNum("lon");setErr("lat","");setErr("lon","");
+ if(la!==null||lo!==null){
+  if(la===null||isNaN(la)||la<-90||la>90){setErr("lat","عرض جغرافیایی را عددی بین ‎-۹۰ و ۹۰ بنویسید.");ok=false}
+  if(lo===null||isNaN(lo)||lo<-180||lo>180){setErr("lon","طول جغرافیایی را عددی بین ‎-۱۸۰ و ۱۸۰ بنویسید.");ok=false}}
+ var hz=optInt("herd"),dd=num("dead"),t2=num("total"),s2=num("sick");setErr("herd","");setErr("dead","");
+ if(hz!==null&&(isNaN(hz)||hz<1||hz>10000000||(!isNaN(t2)&&hz<t2))){setErr("herd","عدد صحیح و دست‌کم برابر تعداد دام‌های بررسی‌شده بنویسید.");ok=false}
+ if(isNaN(dd)){setErr("dead","تعداد تلفات را بنویسید (در صورت نبود تلفات، صفر).");ok=false}
+ else if(!isNaN(s2)&&dd>s2){setErr("dead","تلفات نمی‌تواند از تعداد دام‌های دارای نشانه بیشتر باشد.");ok=false}
+ var vd=parseJ($("vdate").value);
+ setErr("vdate",vd?"":"تاریخ را به شکل ۱۴۰۵/۰۸/۰۱ بنویسید.");if(!vd)ok=false;
+ return ok}
+function toast(m){var e=$("toast");e.textContent=m;e.className="on";clearTimeout(toast.t);toast.t=setTimeout(function(){e.className=""},Math.max(2200,m.length*70))}
+function render(){
+ var a=load(),L=$("list");
+ var T=a.reduce(function(x,r){return x+r.total},0),S=a.reduce(function(x,r){return x+r.sick},0);
+ $("s1").textContent=nf.format(a.length);$("s2").textContent=nf.format(T);
+ $("s3").textContent=T?nf.format(S/T*100)+"٪":"—";
+ $("clear").style.display=a.length?"":"none";
+ $("store").textContent=canStore?"ذخیره‌سازی: این گزارش‌ها در حافظه همین مرورگر و همین دستگاه نگه‌داری می‌شوند و با بستن صفحه از بین نمی‌روند. اما روی سرور نیستند، با دستگاه دیگر دیده نمی‌شوند و با پاک‌کردن اطلاعات مرورگر حذف می‌شوند.":"ذخیره‌سازی مرورگر در این محیط در دسترس نیست؛ گزارش‌ها فقط تا بستن یا تازه‌سازی صفحه می‌مانند.";
+ if(!a.length){L.innerHTML='<div class="empty">هنوز گزارشی ثبت نشده است. فرم را پر کنید و «ثبت گزارش» را بزنید.</div>';return}
+ var shown=listRows(a),qq=$("lq").value.trim();
+ $("lcount").textContent=qq?"نمایش "+fa(shown.length)+" از "+fa(a.length)+" گزارش":"";
+ if(!shown.length){L.innerHTML='<div class="empty">گزارشی مطابق این جست‌وجو پیدا نشد.</div>';return}
+ L.innerHTML=shown.map(function(r){var p=pct(r.sick,r.total);
+  return '<article class="item"><div class="h"><span>'+(r.owner?((r.ownerId&&ID_RE.test(r.ownerId))?'<button type="button" class="lnk" data-oid="'+r.ownerId+'">'+esc(r.owner)+'</button>':'<b>'+esc(r.owner)+'</b>')+' · ':'')+esc(r.type)+' · '+esc(r.village)+'</span><span><span class="tag'+(p>=20?" hi":"")+'">'+nf.format(p)+'٪ دارای نشانه</span>'+(isNotif(r)?'<span class="tag hi">قابل اعلام</span>':'')+(r.baseId?'<span class="tag">پیگیری</span>':'')+'</span></div>'+
+  '<div class="meta">'+nf.format(r.sick)+' از '+nf.format(r.total)+' رأس · واکسیناسیون: '+esc(r.vac)+(vaxText(r)?' ('+esc(vaxText(r))+(r.vacCount?'، '+nf.format(r.vacCount)+' رأس واکسینه':'')+')':'')+' · بازدید: '+esc(fa(r.vdate||jdate(r.at).slice(0,10)))+' · ثبت در دام‌نگار: '+esc(fa(jdate(r.at).slice(0,10)))+(r.vet?' · دامپزشک: '+esc(r.vet):'')+'</div>'+
+  extra(r)+(r.signs?'<p>'+esc(r.signs)+'</p>':'')+(dxText(r)?'<p><b>تشخیص:</b> '+esc(dxText(r))+'</p>':'')+
+  '<p><button class="ghost" data-view="'+r.id+'">مشاهده کامل</button> <button class="ghost" data-edit="'+r.id+'">ویرایش</button> <button class="ghost" data-id="'+r.id+'">حذف</button></p></article>'}).join("")}
+["total","sick"].forEach(function(i){$(i).addEventListener("input",live)});
+$("save").addEventListener("click",function(){
+ if(!validate()){toast("لطفاً خطاهای فرم را اصلاح کنید.");return}
+ var d={type:document.querySelector('input[name=type]:checked').value,village:$("village").value.trim(),total:num("total"),sick:num("sick"),signs:$("signs").value.trim(),vac:$("vac").value,vdate:parseJ($("vdate").value),vet:$("vet").value.trim(),owner:$("owner").value.trim(),dx:$("dx").value,dxCat:$("dx").value==="سایر"?$("dxcat").value:"",dxName:$("dx").value==="سایر"?$("dxname").value.trim():"",vacTypes:vacOn()?selVax():[],vacOther:(vacOn()&&selVax().indexOf("سایر")>=0)?$("vtother").value.trim():"",vacCount:vacOn()?num("vcount"):null,vacNote:vacOn()?$("vnote").value.trim().slice(0,300):"",lat:decNum("lat"),lon:decNum("lon"),acc:decNum("lat")!==null?geoAcc:null,herd:optInt("herd"),dead:num("dead"),photos:pend.map(function(x){return x.id}),orders:cleanOrders(ordDraft),orderChecks:collectChecks()};
+ d.baseId=curOwnerId?($("fubase").value||""):"";
+ var newP=pend.filter(function(x){return x.isNew}),rm=removed.slice(),btn=$("save");btn.disabled=true;
+ resolveOwner(d.owner,d.village,curOwnerId).then(function(res){
+  if(!res)return Promise.reject({abort:1});
+  d.ownerId=res.id;if(curOwnerId&&res.id!==curOwnerId)d.baseId="";
+  var a0=load(),old=editingId&&a0.filter(function(x){return x.id===editingId})[0],oldOid=old&&old.ownerId,pre=Promise.resolve(res);
+  if(old&&oldOid&&res.id!==oldOid){d.baseId="";res.reassign=oldOid;res.mode="move";var info=followInfo(a0,editingId);
+   if(info.deps||info.kids)pre=askDeps(info,"تغییر پرونده این گزارش").then(function(m){if(!m)return Promise.reject({abort:1});res.mode=m;return res})}
+  return pre.then(function(r2){return Promise.all(newP.map(function(x){return putPh(x.id,x.data)})).then(function(){return r2})})
+ }).then(function(res){
+  var a=load(),wasEdit=false;if(res.renameAll)a.forEach(function(r){if(r.ownerId===res.id)r.owner=d.owner});
+  if(editingId){a=a.map(function(r){if(r.id===editingId){wasEdit=true;return Object.assign({},r,d)}return r})}
+  if(!wasEdit)a.push(Object.assign({id:Date.now().toString(36),at:Date.now()},d));
+  if(wasEdit&&res.reassign)moveChain(a,editingId,res.reassign,res.id,res.mode);
+  var saved=save(a);if(saved&&rm.length)delPh(rm).catch(function(){});resetForm();render();toast(saved?(wasEdit?"تغییرات ذخیره شد.":"گزارش ثبت شد."):"هشدار: ذخیره در حافظه مرورگر انجام نشد! گزارش فقط تا بستن صفحه می‌ماند؛ همین حالا «پشتیبان‌گیری» را بزنید.")
+ }).catch(function(e){if(e&&e.abort){toast("ثبت لغو شد؛ چیزی ذخیره نشد.");return}toast("ذخیره تصویر ممکن نشد؛ گزارش ثبت نشد"+(e&&e.message?" ("+e.message+")":"")+". تصویرها را حذف کنید یا فضای مرورگر را بررسی کنید.")}).then(function(){btn.disabled=false});});
+var editingId=null;
+function resetForm(){editingId=null;["owner","village","total","sick","signs","lat","lon","herd","dead"].forEach(function(i){$(i).value="";setErr(i,"")});geoAcc=null;$("geost").textContent="";syncGeo();
+ $("vac").value="نامشخص";$("vdate").value=fa(todayJ());$("vet").value="";setErr("vdate","");setErr("vet","");document.querySelector('input[name=type]').checked=true;
+ $("save").textContent="ثبت گزارش";$("editbar").className="editbar";$("cancel").className="cancel";curOwnerId=null;$("fubar").hidden=true;ordDraft=[];editChecks=[];chkDraft={};chkKeep=[];chkShown=[];closeOrdEditor();renderOrdList();setErr("orders","");$("fucheck").hidden=true;$("vdnote").textContent="تاریخ بازدید یا وقوع را از تقویم انتخاب کنید؛ می‌تواند گذشته باشد. تاریخ ثبت در دام‌نگار خودکار است و با آن تغییر نمی‌کند.";$("vdwarn").textContent="";setDx("","","");setVax([],"",null);pend=[];removed=[];phTok++;$("save").disabled=false;renderPForm();setErr("photos","");live()}
+function startEdit(id){var r=load().filter(function(x){return x.id===id})[0];if(!r)return;
+ resetForm();editingId=id;
+ var t=document.querySelector('input[name=type][value="'+r.type+'"]');if(t)t.checked=true;
+ $("village").value=r.village;$("total").value=String(r.total);$("sick").value=String(r.sick);$("signs").value=r.signs||"";$("vac").value=r.vac;$("vdate").value=fa(r.vdate||jdate(r.at).slice(0,10));$("vet").value=r.vet||"";$("owner").value=r.owner||"";$("lat").value=r.lat==null?"":String(r.lat);$("lon").value=r.lon==null?"":String(r.lon);geoAcc=r.acc||null;$("herd").value=r.herd==null?"":String(r.herd);$("dead").value=r.dead==null?"":String(r.dead);syncGeo();setDx(r.dx,r.dxCat,r.dxName);setVax(r.vacTypes,r.vacOther,r.vacCount,r.vacNote);
+ var tk=phTok;if((r.photos||[]).length){$("save").disabled=true;
+  Promise.all(r.photos.map(function(i){return getPh(i).then(function(d){return d?{id:i,data:d,isNew:false}:null},function(){return null})})).then(function(l){if(tk!==phTok)return;pend=l.filter(Boolean);renderPForm();$("save").disabled=false})}
+ ordDraft=cleanOrders(clone(r.orders||[]));renderOrdList();editChecks=clone(r.orderChecks||[]);chkDraft={};
+ if(r.ownerId)setFu(r.ownerId,r.baseId||"");else renderChecks();
+ $("vdnote").textContent="تاریخ بازدید یا وقوع را از تقویم انتخاب کنید. تاریخ ثبت این گزارش در دام‌نگار: "+fa(jdate(r.at))+" (خودکار؛ با ویرایش تغییر نمی‌کند).";vdCheck();
+ $("save").textContent="ذخیره تغییرات";$("editbar").className="editbar on";$("cancel").className="cancel on";
+ live();$("village").focus();$("f").scrollIntoView({behavior:"smooth",block:"start"})}
+$("cancel").addEventListener("click",function(){resetForm();toast("ویرایش لغو شد.")});
+$("list").addEventListener("click",function(e){var g=e.target.getAttribute?e.target:null;if(!g)return;
+ if(g.getAttribute("data-ph")){if(g.src)openLb(g.src);return}
+ var oid=g.getAttribute("data-oid"),vw=g.getAttribute("data-view");
+ if(oid){openProfile(oid);return}if(vw){showReport(vw);return}
+ var ed=g.getAttribute("data-edit"),id=g.getAttribute("data-id");
+ if(ed){startEdit(ed);return}
+ if(id){var gone=load().filter(function(r){return r.id===id})[0];if(gone&&gone.photos&&gone.photos.length)delPh(gone.photos).catch(function(){});save(load().filter(function(r){return r.id!==id}));if(editingId===id)resetForm();render();toast("گزارش حذف شد.")}});
+$("clear").addEventListener("click",function(){
+ if(!load().length){toast("گزارشی برای حذف نیست.");return}
+ if(!lastB()||lastC()>lastB()){if(confirm("بعد از آخرین پشتیبان‌گیری، گزارشی ثبت یا تغییر کرده است.\n\nاول پشتیبان بگیرم؟\n(تأیید = پشتیبان گرفته می‌شود و چیزی حذف نمی‌شود)")){$("bak").click();return}}
+ if(confirm("هشدار: همه گزارش‌ها و تصویرها برای همیشه حذف می‌شوند و بازگشتی ندارند. ادامه می‌دهید؟")){var sv=save([]);clearPh().catch(function(){});try{localStorage.removeItem("damnegar:pre-owners");localStorage.removeItem("damnegar:pre-owners-2")}catch(e){}resetForm();render();toast(sv?"همه گزارش‌ها حذف شدند.":"هشدار: ذخیره در حافظه مرورگر انجام نشد.")}});
+
+function jdate(t){var o={};new Intl.DateTimeFormat("en-u-ca-persian-nu-latn",{year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date(t)).forEach(function(x){o[x.type]=x.value});
+ return o.year+"/"+o.month+"/"+o.day+" "+o.hour+":"+o.minute}
+function fa(v){return String(v).replace(/\d/g,function(d){return "۰۱۲۳۴۵۶۷۸۹"[d]})}
+function todayJ(){return jdate(Date.now()).slice(0,10)}
+function jLeap(y){return ((25*y+11)%33)<8}
+function jDays(y,m){return m<=6?31:(m<=11?30:(jLeap(y)?30:29))}
+function parseJ(v){var m=/^(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})$/.exec(digits(String(v)));if(!m)return null;
+ var y=+m[1],mo=+m[2],d=+m[3];if(y<1300||y>1500||mo<1||mo>12||d<1||!jOk(y,mo,d))return null;
+ return y+"/"+("0"+mo).slice(-2)+"/"+("0"+d).slice(-2)}
+function rowOf(r){return [r.owner||"",r.vdate||jdate(r.at).slice(0,10),r.vet||"",r.type,r.village,r.lat==null?"":r.lat,r.lon==null?"":r.lon,r.total,r.sick,p1(r),r.herd==null?"":r.herd,r.dead==null?"":r.dead,r.signs||"",r.dx==="سایر"?(r.dxName||"سایر"):(r.dx||""),r.dx==="سایر"?(r.dxCat||""):"",r.dx?(isNotif(r)?"بله":"خیر"):"",r.vac,vaxText(r),r.vacNote||"",r.vacCount==null?"":r.vacCount,(r.photos||[]).length,r.baseId?"پیگیری":"عادی",r.baseId?(BYID[r.baseId]?dateOf(BYID[r.baseId]):"گزارش مبنا در دسترس نیست"):"",jdate(r.at)]}
+var TYPES=["گاو","گاومیش","گوساله","گوسفند","بز","اسب","سگ","سایر"],VACS=["کاملاً واکسینه","ناقص یا نامنظم","واکسینه نشده","نامشخص"];
+function prov(v){return v!==undefined&&v!==null&&v!==""}
+function fixes(r,c){var n=0;
+ if(prov(r.type)&&c.type!==r.type)n++;if(prov(r.vac)&&c.vac!==r.vac)n++;if(prov(r.vdate)&&!parseJ(r.vdate))n++;
+ if(prov(r.herd)&&c.herd!==r.herd)n++;if(prov(r.dead)&&c.dead!==r.dead)n++;if(prov(r.vacCount)&&c.vacCount!==r.vacCount)n++;
+ if((prov(r.lat)||prov(r.lon))&&(c.lat!==r.lat||c.lon!==r.lon))n++;if(prov(r.dx)&&c.dx!==r.dx)n++;return n}
+function missingPh(r,c){var a=Array.isArray(r.photos)?r.photos:[];return Math.max(0,Math.min(a.length,3)-c.photos.length)}
+function cleanRec(r,pm){return cleanRec0(r,pm)}
+function cleanRec0(r,pm){
+ if(!r||typeof r!=="object")return null;
+ var t=r.total,k=r.sick,v=String(r.village||"").trim();
+ if(!Number.isInteger(t)||!Number.isInteger(k)||t<1||t>100000||k<0||k>t||!v)return null;
+ var at=Number.isFinite(r.at)?r.at:Date.now(),g=(typeof r.lat==="number"&&typeof r.lon==="number"&&Math.abs(r.lat)<=90&&Math.abs(r.lon)<=180),hd=(Number.isInteger(r.herd)&&r.herd>=t&&r.herd<=10000000)?r.herd:null,dd=(Number.isInteger(r.dead)&&r.dead>=0&&r.dead<=k)?r.dead:null;
+ return {id:(typeof r.id==="string"&&/^[a-z0-9]{1,20}$/.test(r.id))?r.id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),at:at,
+  type:TYPES.indexOf(r.type)>=0?r.type:"سایر",village:v.slice(0,200),total:t,sick:k,signs:String(r.signs||"").slice(0,2000),
+  vac:VACS.indexOf(r.vac)>=0?r.vac:"نامشخص",vdate:parseJ(r.vdate||"")||jdate(at).slice(0,10),vet:String(r.vet||"").slice(0,100),owner:String(r.owner||"").slice(0,100),dx:(ALLN[r.dx]||r.dx==="سایر")?r.dx:"",dxCat:(r.dx==="سایر"&&CATS.indexOf(r.dxCat)>=0)?r.dxCat:"",dxName:r.dx==="سایر"?String(r.dxName||"").slice(0,100):"",
+  vacTypes:Array.isArray(r.vacTypes)?r.vacTypes.filter(function(x){return VAX.indexOf(x)>=0||x==="سایر"}):[],
+  vacOther:String(r.vacOther||"").slice(0,100),vacNote:String(r.vacNote||"").slice(0,300),vacCount:(Number.isInteger(r.vacCount)&&r.vacCount>=1&&r.vacCount<=t)?r.vacCount:null,lat:g?r.lat:null,lon:g?r.lon:null,acc:(g&&typeof r.acc==="number"&&r.acc>=0&&r.acc<100000)?r.acc:null,herd:hd,dead:dd,ownerId:validOid(r.ownerId)?r.ownerId:"",baseId:(typeof r.baseId==="string"&&ID_RE.test(r.baseId)&&!junkId(r.baseId))?r.baseId:"",photos:(Array.isArray(r.photos)?r.photos:[]).filter(function(i){return /^[a-z0-9]{1,24}$/.test(i)&&pm&&validPh(pm[i])}).slice(0,3),orders:cleanOrders(r.orders),orderChecks:cleanChecks(r.orderChecks)}}
+var DX={
+ multi:["سیاه‌زخم","تب برفکی","بروسلوزیس (تب مالت)","بیماری زبان آبی","هاری","تب دره ریفت","تب خونریزی‌دهنده کریمه‌کنگو","تب کیو (Q)","اکینوکوکوزیس (کیست هیداتید)","پاراتوبرکلوزیس (بیماری یونه)","بیماری خونریزی‌دهنده اپیزوتیک (EHD)"],
+ cattle:["تب دانه‌ای پوستی گاو (LSD)","سل گاوی","لوکوز آنزوئوتیک گاوی","رینوتراکئیت عفونی گاو (IBR)","اسهال ویروسی گاو (BVD)","تیلریوز","بابزیوز گاوی","آناپلاسموز گاوی","سپتی‌سمی هموراژیک","تریکومونوزیس","کمپیلوباکتریوز تناسلی گاو","انسفالوپاتی اسفنجی گاو (جنون گاوی)"],
+ small:["طاعون نشخوارکنندگان کوچک (PPR)","آبله گوسفند و بز","آگالاکسی واگیر","پلوروپنومونی واگیر بز (CCPP)","سقط آنزوئوتیک میش","ماعدی‌ویسنا","آرتریت‌انسفالیت بز (CAE)","اپیدیدیمیت گوسفندی (بروسلا اویس)","سالمونلوز (سالمونلا آبورتوس‌اویس)","اسکراپی","بیماری نایروبی گوسفند"]};
+DX.equiMulti=["سیاه‌زخم","هاری","انسفالیت ژاپنی","تب غرب نیل","سورا (تریپانوزومیازیس)"];
+DX.equine=["متریت واگیر اسب (CEM)","دوارین","انسفالومیلیت اسب (شرقی، غربی، ونزوئلایی)","کم‌خونی عفونی اسب (EIA)","آنفلوانزای اسب","پیروپلاسموز اسب","رینوپنومونیت اسب (EHV-1)","آرتریت ویروسی اسب (EAV)","ماله (گلاندرز)","تب اسب آفریقایی (AHS)"];
+DX.canine=["هاری","لیشمانیوز","اکینوکوکوزیس (کیست هیداتید)"];
+var ALLN=Object.create(null);["multi","cattle","small","equiMulti","equine","canine"].forEach(function(k){DX[k].forEach(function(n){ALLN[n]=1})});
+var CATS=["متابولیکی","عفونی (باکتریایی)","عفونی (ویروسی)","انگلی","تولیدمثلی","گوارشی","تنفسی","پوستی","سمی یا مسمومیت","تغذیه‌ای یا کمبودها","اندام حرکتی","سایر"];
+function dxList(t){if(t==="اسب")return DX.equiMulti.concat(DX.equine);if(t==="سگ")return DX.canine.slice();var l=DX.multi.slice();if(t==="گاو"||t==="گاومیش"||t==="گوساله")l=l.concat(DX.cattle);else if(t==="گوسفند"||t==="بز")l=l.concat(DX.small);return l}
+function curType(){return document.querySelector('input[name=type]:checked').value}
+function rebuildDx(keep){var sel=$("dx"),old=keep?sel.value:"";sel.innerHTML="";
+ function op(v,t,par){var o=document.createElement("option");o.value=v;o.textContent=t;par.appendChild(o)}
+ op("","تشخیص ثبت نشده",sel);
+ var g=document.createElement("optgroup");g.label="بیماری‌های قابل اعلام (بر پایه فهرست WOAH)";
+ dxList(curType()).forEach(function(n){op(n,n,g)});sel.appendChild(g);
+ op("سایر","سایر (غیر از فهرست بالا؛ نام بیماری را بنویسید)",sel);
+ sel.value=old;if(sel.value!==old)sel.value="";syncDx()}
+function syncDx(){var v=$("dx").value;$("dxother").hidden=v!=="سایر";
+ var w=$("dxwarn");if(ALLN[v]){w.textContent="هشدار: «"+v+"» جزو بیماری‌های قابل اعلام است. طبق دستورالعمل سازمان دامپزشکی کشور، موضوع را به مراجع رسمی گزارش دهید.";w.className="warn on"}else{w.textContent="";w.className="warn"}}
+function setDx(v,c,n){rebuildDx();$("dx").value=v||"";if($("dx").value!==(v||""))$("dx").value="";$("dxcat").value=c||"";$("dxname").value=n||"";syncDx()}
+function dxText(r){if(!r.dx)return "";if(r.dx==="سایر")return (r.dxName||"سایر")+(r.dxCat?" ("+r.dxCat+")":"");return r.dx}
+function isNotif(r){return !!(r.dx&&ALLN[r.dx])}
+var VAX=["تب برفکی","آنتروتوکسمی","سیاه‌زخم","بروسلوز","طاعون نشخوارکنندگان کوچک (PPR)","آبله گوسفند و بز","تب دانه‌ای پوستی گاو (LSD)","شاربن علامتی (بلک‌لگ)","پاستورلوز و سپتی‌سمی هموراژیک","تیلریوز","IBR و BVD"];
+function boxes(){return Array.prototype.slice.call($("vtypes").querySelectorAll("input"))}
+function buildVax(){var b=$("vtypes");VAX.concat(["سایر"]).forEach(function(n){var l=document.createElement("label"),i=document.createElement("input"),sp=document.createElement("span");
+ i.type="checkbox";i.value=n;sp.textContent=n;l.appendChild(i);l.appendChild(sp);b.appendChild(l);i.addEventListener("change",syncVac)})}
+function vacOn(){var v=$("vac").value;return v==="کاملاً واکسینه"||v==="ناقص یا نامنظم"}
+function selVax(){return boxes().filter(function(i){return i.checked}).map(function(i){return i.value})}
+function syncVac(){$("vacbox").hidden=!vacOn();$("vtotherbox").hidden=selVax().indexOf("سایر")<0}
+function setVax(t,o,c,n){$("vnote").value=n||"";boxes().forEach(function(i){i.checked=(t||[]).indexOf(i.value)>=0});$("vtother").value=o||"";$("vcount").value=c==null?"":String(c);syncVac()}
+function vaxText(r){var a=r.vacTypes||[],t=a.filter(function(x){return x!=="سایر"});if(a.indexOf("سایر")>=0)t.push(r.vacOther||"سایر");return t.join("، ")}
+function optInt(id){var v=digits($(id).value);return v===""?null:(/^\d+$/.test(v)?parseInt(v,10):NaN)}
+function decNum(id){var v=digits($(id).value).replace(/[٫,،]/g,".");return v===""?null:(/^-?\d+(\.\d+)?$/.test(v)?parseFloat(v):NaN)}
+var geoAcc=null;
+function syncGeo(){var la=decNum("lat"),lo=decNum("lon"),a=$("maplink");
+ var ok=la!==null&&lo!==null&&!isNaN(la)&&!isNaN(lo)&&Math.abs(la)<=90&&Math.abs(lo)<=180;
+ a.hidden=!ok;if(ok)a.href="https://www.openstreetmap.org/?mlat="+la+"&mlon="+lo+"#map=14/"+la+"/"+lo;
+ $("geohint").textContent=(ok&&(la<24||la>40||lo<44||lo>64))?"این مختصات خارج از محدوده ایران است؛ ترتیب عرض و طول را بررسی کنید.":""}
+function getGeo(){var st=$("geost"),pr=location.protocol;
+ if(!navigator.geolocation||window.isSecureContext===false){st.textContent="مرورگر فقط روی صفحه‌ی امن (آدرس https://) اجازه‌ی GPS می‌دهد و این صفحه امن باز نشده است (پروتکل: "+pr+"). برای فعال‌شدن GPS برنامه باید روی یک میزبان HTTPS باز شود؛ فعلاً مختصات را دستی بنویسید.";return}
+ st.textContent="در حال دریافت موقعیت…";
+ function ok(p){$("lat").value=p.coords.latitude.toFixed(6);$("lon").value=p.coords.longitude.toFixed(6);geoAcc=p.coords.accuracy;
+  setErr("lat","");setErr("lon","");st.textContent="موقعیت ثبت شد (دقت حدود "+fa(Math.round(p.coords.accuracy))+" متر).";syncGeo()}
+ function fail(e,second){
+  if(e.code===3&&!second){st.textContent="GPS دقیق جواب نداد؛ تلاش دوباره با دقت کمتر…";navigator.geolocation.getCurrentPosition(ok,function(e2){fail(e2,true)},{enableHighAccuracy:false,timeout:20000,maximumAge:60000});return}
+  var m=e.code===1?"اجازه‌ی دسترسی به موقعیت داده نشده است. در مرورگر، نماد قفل یا تنظیمات کنار آدرس را بزنید، «موقعیت مکانی» را روی «اجازه» بگذارید و دوباره امتحان کنید. مطمئن شوید موقعیت‌یابی (Location) گوشی هم روشن است.":e.code===2?"موقعیت در دسترس نیست؛ GPS یا موقعیت‌یابی گوشی را روشن کنید و ترجیحاً در فضای باز امتحان کنید.":"زمان دریافت موقعیت تمام شد؛ دوباره امتحان کنید.";
+  st.textContent=m+" (کد "+fa(e.code)+(e.message?"؛ جزئیات فنی: "+e.message:"")+"؛ پروتکل: "+pr+") — در صورت نیاز مختصات را دستی بنویسید."}
+ navigator.geolocation.getCurrentPosition(ok,function(e){fail(e,false)},{enableHighAccuracy:true,timeout:15000,maximumAge:0})}
+function extra(r){var a=[];if(r.dead!=null)a.push("تلفات: "+nf.format(r.dead));if(r.herd)a.push("کل دام‌های دامداری: "+nf.format(r.herd));if(r.vacNote)a.push("برند/توضیحات واکسن: "+r.vacNote);if((r.orders||[]).length)a.push("دستورات: "+fa(r.orders.length));
+ var h=a.length?'<p class="meta">'+esc(a.join(" · "))+'</p>':'';
+ if(r.lat!=null)h+='<p class="meta">موقعیت: '+fa(r.lat.toFixed(5))+"، "+fa(r.lon.toFixed(5))+(r.acc?" (دقت حدود "+fa(Math.round(r.acc))+" متر)":"")+' · <a href="https://www.openstreetmap.org/?mlat='+r.lat+"&mlon="+r.lon+"#map=14/"+r.lat+"/"+r.lon+'" target="_blank" rel="noopener">دیدن روی نقشه</a></p>';
+ var ph=(r.photos||[]).filter(function(i){return /^[a-z0-9]{1,24}$/.test(i)});
+ if(ph.length)h+='<div class="thumbs">'+ph.map(function(i){return '<img data-ph="'+i+'" alt="تصویر">'}).join("")+'</div>';return h}
+var DB=null,dbOK=true,pend=[],removed=[],phTok=0;
+function idb(){return new Promise(function(res,rej){if(DB)return res(DB);var q;
+ try{q=indexedDB.open("damnegar",1)}catch(e){dbOK=false;return rej(e)}
+ q.onupgradeneeded=function(){q.result.createObjectStore("photos",{keyPath:"id"})};
+ q.onsuccess=function(){DB=q.result;res(DB)};q.onerror=function(){dbOK=false;rej(q.error)}})}
+function tx(mode,fn){return idb().then(function(db){return new Promise(function(res,rej){var t=db.transaction("photos",mode),out=fn(t.objectStore("photos"));
+ t.oncomplete=function(){res(out&&out.result)};t.onerror=t.onabort=function(){rej(t.error)}})})}
+function idbPut(id,d){return tx("readwrite",function(st){return st.put({id:id,data:d})})}
+function idbGet(id){return tx("readonly",function(st){return st.get(id)}).then(function(r){return r&&r.data})}
+function idbDel(ids){return ids.length?tx("readwrite",function(st){ids.forEach(function(i){st.delete(i)})}):Promise.resolve()}
+function idbClear(){return tx("readwrite",function(st){return st.clear()})}
+function idbAll(){return tx("readonly",function(st){return st.getAll()})}
+var phMode="idb",phErr="";
+function lsKey(i){return "damnegar:ph:"+i}
+function lsPut(id,d){try{var used=0;for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf("damnegar:ph:")===0)used+=(localStorage.getItem(k)||"").length}
+ if(used+d.length>3000000)return Promise.reject(new Error("سقف حافظه‌ی عکس در حالت محدود پر شد"));localStorage.setItem(lsKey(id),d);return Promise.resolve()}catch(e){return Promise.reject(e)}}
+function lsGet(id){try{return Promise.resolve(localStorage.getItem(lsKey(id))||undefined)}catch(e){return Promise.resolve(undefined)}}
+function lsDel(ids){try{ids.forEach(function(i){localStorage.removeItem(lsKey(i))})}catch(e){}return Promise.resolve()}
+function lsAll(){var out=[];try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k&&k.indexOf("damnegar:ph:")===0)out.push({id:k.slice(12),data:localStorage.getItem(k)})}}catch(e){}return Promise.resolve(out)}
+function putPh(id,d){if(phMode==="idb")return idbPut(id,d).catch(function(e){phMode="ls";phErr=(e&&e.name)||"error";updPers();return lsPut(id,d)});return lsPut(id,d)}
+function getPh(id){return idbGet(id).then(function(d){return d||lsGet(id)},function(){return lsGet(id)})}
+function delPh(ids){if(!ids.length)return Promise.resolve();return Promise.all([idbDel(ids).catch(function(){}),lsDel(ids)]).then(function(){})}
+function clearPh(){return Promise.all([idbClear().catch(function(){}),lsAll().then(function(l){return lsDel(l.map(function(x){return x.id}))})]).then(function(){})}
+function allPh(){return Promise.all([phMode==="idb"?idbAll():Promise.resolve([]),lsAll()]).then(function(r){return r[0].concat(r[1])})}
+function phSelfTest(){var id="selftest";return idbPut(id,"x").then(function(){return idbGet(id)}).then(function(v){if(v!=="x")throw new Error("mismatch");return idbDel([id])}).then(function(){phMode="idb";phErr="";updPers();renderPForm()},function(e){phMode="ls";phErr=(e&&e.name)||(e&&e.message)||"error";updPers();renderPForm()})}
+function validPh(d){return typeof d==="string"&&d.length<3000000&&/^data:image\/jpeg;base64,[A-Za-z0-9+\/=]+$/.test(d)}
+function newId(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function compress(file){return new Promise(function(res,rej){
+ if(!file||!file.size){rej(new Error("فایل خالی است"));return}
+ if(file.size>80*1048576){rej(new Error("حجم فایل بیش از ۸۰ مگابایت است"));return}
+ var MAX=phMode==="idb"?1280:800,Q=phMode==="idb"?0.72:0.6;
+ function draw(src,w,h){try{var k=Math.min(1,MAX/Math.max(w,h)),c=document.createElement("canvas");c.width=Math.max(1,Math.round(w*k));c.height=Math.max(1,Math.round(h*k));c.getContext("2d").drawImage(src,0,0,c.width,c.height);res(c.toDataURL("image/jpeg",Q))}catch(e){rej(new Error("تبدیل تصویر ناموفق بود: "+((e&&e.name)||"")))}}
+ function viaImg(){var u=URL.createObjectURL(file),im=new Image();im.onload=function(){draw(im,im.naturalWidth,im.naturalHeight);URL.revokeObjectURL(u)};im.onerror=function(){URL.revokeObjectURL(u);rej(new Error("مرورگر نتوانست این تصویر را باز کند"))};im.src=u}
+ if(window.createImageBitmap){createImageBitmap(file,{imageOrientation:"from-image"}).then(function(b){draw(b,b.width,b.height)},function(){createImageBitmap(file).then(function(b){draw(b,b.width,b.height)},viaImg)})}else viaImg()})}
+function openLb(src){$("lbi").src=src;$("lb").hidden=false}
+function renderPForm(){var b=$("photos");b.innerHTML="";
+ pend.forEach(function(x){var d=document.createElement("div"),im=document.createElement("img"),bt=document.createElement("button");
+  d.className="ph";im.src=x.data;im.alt="تصویر";bt.type="button";bt.textContent="×";bt.setAttribute("aria-label","حذف تصویر");
+  bt.addEventListener("click",function(){if(!x.isNew)removed.push(x.id);pend.splice(pend.indexOf(x),1);renderPForm()});
+  im.addEventListener("click",function(){openLb(x.data)});d.appendChild(im);d.appendChild(bt);b.appendChild(d)});
+ $("pact").hidden=pend.length>=3;$("phst").textContent=phMode==="idb"?"":"حالت محدود ذخیره عکس: عکس‌ها کوچک‌تر ذخیره می‌شوند و تعداد کمی جا دارند؛ مرتب پشتیبان بگیرید."}
+function fillThumbs(root){Array.prototype.forEach.call((root||$("list")).querySelectorAll("img[data-ph]"),function(im){getPh(im.getAttribute("data-ph")).then(function(d){if(d)im.src=d},function(){})})}
+function wil(k,n){if(!n)return null;var z=1.96,p=k/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return [Math.max(0,(c-h)*100),Math.min(100,(c+h)*100)]}
+function pc(k,n){return n?Math.round(k/n*1000)/10:null}
+function pf(x){return x==null?"—":nf.format(x)+"٪"}
+function dateOf(r){return r.vdate||jdate(r.at).slice(0,10)}
+function dxKey(r){return r.dx?(r.dx==="سایر"?(r.dxName||"سایر"):r.dx):"بدون تشخیص"}
+function herdKey(r){return (r.ownerId||nrm(r.owner))+"|"+nrm(r.village)}
+function epiRows(a){var t=$("ftype").value,d=$("fdx").value,f=parseJ($("ffrom").value),u=parseJ($("fto").value);
+ return a.filter(function(r){var dt=dateOf(r);return (!t||r.type===t)&&(!d||dxKey(r)===d)&&(!f||dt>=f)&&(!u||dt<=u)})}
+function agg(rs){var o={n:rs.length,E:0,C:0,Ed:0,Cd:0,D:0,nd:0,Hh:0,Ch:0,Eh:0,nh:0,vE:0,vc:0,notif:0},hs={},hc={};
+ rs.forEach(function(r){var k=herdKey(r);hs[k]=1;o.E+=r.total;o.C+=r.sick;if(r.sick>0)hc[k]=1;
+  if(r.dead!=null){o.nd++;o.Ed+=r.total;o.Cd+=r.sick;o.D+=r.dead}
+  if(r.herd){o.nh++;o.Hh+=r.herd;o.Ch+=r.sick;o.Eh+=r.total}
+  if(r.vac==="واکسینه نشده"){o.vE+=r.total}else if((r.vac==="کاملاً واکسینه"||r.vac==="ناقص یا نامنظم")&&r.vacCount!=null){o.vE+=r.total;o.vc+=r.vacCount}
+  if(isNotif(r))o.notif++});
+ o.H=Object.keys(hs).length;o.Hc=Object.keys(hc).length;return o}
+function indicators(o){var L=[];
+ function add(name,k,n,note,noci){var ci=(noci||!n)?null:wil(k,n);L.push({name:name,k:k,n:n,p:pc(k,n),lo:ci&&ci[0],hi:ci&&ci[1],note:note||""})}
+ add("نسبت دام‌های دارای نشانه (شیوع ظاهری در دام‌های بررسی‌شده)",o.C,o.E);
+ add("نسبت دامداری‌های دارای دست‌کم یک دام نشانه‌دار",o.Hc,o.H,"دامداری: ترکیب نام دامدار و روستا");
+ add("نسبت حمله (بروز تجمعی)",o.Ch,o.Hh,"فقط "+fa(o.nh)+" گزارش دارای «کل دام‌های دامداری»");
+ add("پوشش بررسی (بررسی‌شده از کل دام‌های دامداری)",o.Eh,o.Hh,"",true);
+ add("نرخ تلفات در دام‌های بررسی‌شده",o.D,o.Ed,"فقط "+fa(o.nd)+" گزارش دارای تلفات ثبت‌شده");
+ add("نسبت مرگ در مبتلایان (Case fatality)",o.D,o.Cd,"تلفات از میان دام‌های دارای نشانه");
+ add("پوشش واکسیناسیون (واکسینه‌شده از بررسی‌شده)",o.vc,o.vE,"فقط گزارش‌هایی که وضعیت واکسن‌شان معلوم است",true);
+ return L}
+function grp(rs,kf,top){var m={};rs.forEach(function(r){var k=kf(r);(m[k]=m[k]||[]).push(r)});
+ var rows=Object.keys(m).map(function(k){var o=agg(m[k]);return [k,o.n,o.E,o.C,pc(o.C,o.E),o.nd?o.D:"",(o.nd&&o.Cd>0)?pc(o.D,o.Cd):""]});
+ return top?rows.sort(function(x,y){return y[3]-x[3]||y[1]-x[1]}):rows.sort(function(x,y){return x[0]<y[0]?-1:1})}
+var GHEAD=["گروه","تعداد گزارش","دام بررسی‌شده","دارای نشانه","درصد دارای نشانه","تلفات","نسبت مرگ در مبتلایان (٪)"];
+function tbl(head,rows,tf){return '<div class="sc"><table class="tb"><tr>'+head.map(function(h){return '<th>'+esc(h)+'</th>'}).join("")+'</tr>'+rows.map(function(r){return '<tr>'+r.map(function(c,i){return '<td>'+(typeof c==="number"?esc(tf?tf(c,i):nf.format(c)):esc(c))+'</td>'}).join("")+'</tr>'}).join("")+'</table></div>'}
+function renderEpi(){
+ var ff=$("ffrom").value.trim(),ft=$("fto").value.trim(),hm="";
+ if(ff&&!parseJ(ff))hm="«از تاریخ» نامعتبر است و اعمال نشد. ";if(ft&&!parseJ(ft))hm+="«تا تاریخ» نامعتبر است و اعمال نشد.";
+ if(!hm&&ff&&ft&&parseJ(ff)>parseJ(ft))hm="«از تاریخ» بعد از «تا تاریخ» است؛ نتیجه‌ای نخواهد بود.";
+ $("fhint").textContent=hm;
+ var a=load(),sel=$("fdx"),old=sel.value,keys={};a.forEach(function(r){keys[dxKey(r)]=1});
+ sel.innerHTML='<option value="">همه</option>'+Object.keys(keys).sort().map(function(k){return '<option>'+esc(k)+'</option>'}).join("");sel.value=old;if(sel.value!==old)sel.value="";
+ var rs=epiRows(a),box=$("epiout");
+ if(!rs.length){box.innerHTML='<div class="empty">'+(a.length?"گزارشی مطابق این فیلترها نیست.":"با ثبت گزارش‌ها، شاخص‌های اپیدمیولوژیک اینجا محاسبه می‌شود.")+'</div>';$("epix").disabled=!a.length;return}
+ $("epix").disabled=false;
+ var o=agg(rs),ind=indicators(o);
+ var h='<div class="cards"><div>گزارش<b>'+fa(o.n)+'</b></div><div>دامداری<b>'+fa(o.H)+'</b></div><div>دام بررسی‌شده<b>'+nf.format(o.E)+'</b></div><div>دارای نشانه<b>'+nf.format(o.C)+'</b></div><div>تلفات ثبت‌شده<b>'+nf.format(o.D)+'</b></div></div>';
+ if(o.E<30)h+='<div class="err">تعداد دام‌های بررسی‌شده کم است؛ اعداد را با احتیاط تفسیر کنید.</div>';
+ h+='<div class="sc"><table class="tb"><tr><th>شاخص</th><th>مقدار</th><th>در هر ۱۰۰۰ دام</th><th>صورت از مخرج</th><th>فاصله اطمینان ۹۵٪</th></tr>'+ind.map(function(x){
+  return '<tr><td>'+esc(x.name)+(x.note?'<div class="meta">'+esc(x.note)+'</div>':'')+'</td><td><b>'+(x.n?pf(x.p):"—")+'</b></td><td>'+(x.n?nf.format(x.k/x.n*1000):"—")+'</td><td>'+(x.n?nf.format(x.k)+" از "+nf.format(x.n):"داده کافی نیست")+'</td><td>'+(x.lo!=null?pf(x.lo)+" تا "+pf(x.hi):"—")+'</td></tr>'}).join("")+'</table></div>';
+ var tf=function(c,i){return (i===4||i===6)?nf.format(c)+"٪":nf.format(c)};
+ h+='<div class="sub">بر حسب نوع دام</div>'+tbl(GHEAD,grp(rs,function(r){return r.type}),tf);
+ var gd=grp(rs,dxKey,true);h+='<div class="sub">بر حسب تشخیص'+(gd.length>10?" (۱۰ مورد اول؛ همه در Excel)":"")+'</div>'+tbl(GHEAD,gd.slice(0,10),tf);
+ var gv=grp(rs,function(r){return r.village.trim()},true);h+='<div class="sub">بر حسب روستا یا محدوده'+(gv.length>10?" (۱۰ مورد اول؛ همه در Excel)":"")+'</div>'+tbl(GHEAD,gv.slice(0,10),tf);
+ h+='<div class="sub">بر حسب ماه بازدید (شمسی)</div>'+tbl(GHEAD,grp(rs,function(r){return dateOf(r).slice(0,7)}).map(function(r){r[0]=fa(r[0]);return r}),tf);
+ box.innerHTML=h}
+function epiBook(a){var rs=epiRows(a),o=agg(rs),ind=indicators(o);
+ var sum=[["نوع دام (فیلتر)",$("ftype").value||"همه","","","","","",""],["تشخیص (فیلتر)",$("fdx").value||"همه","","","","","",""],["بازه تاریخ (فیلتر)",($("ffrom").value||"—")+" تا "+($("fto").value||"—"),"","","","","",""],
+  ["تعداد گزارش","","",o.n,"","","",""],["تعداد دامداری","","",o.H,"","","",""],["دام بررسی‌شده","","",o.E,"","","",""],["دام دارای نشانه","","",o.C,"","","",""],["تلفات ثبت‌شده","","",o.D,"","","",""]];
+ ind.forEach(function(x){sum.push([x.name,x.n?x.p:"",x.n?Math.round(x.k/x.n*10000)/10:"",x.n?x.k:"",x.n?x.n:"",x.lo!=null?Math.round(x.lo*10)/10:"",x.hi!=null?Math.round(x.hi*10)/10:"",x.note])});
+ var gf=["t","i","i","i","d","i","d"],gw=[28,14,16,16,18,12,24];
+ function sh(name,rows){return {name:name,head:GHEAD,fmt:gf,w:gw,rows:rows}}
+ return xlsxFrom([{name:"خلاصه شاخص‌ها",head:["شاخص","درصد","در هر ۱۰۰۰ دام","صورت","مخرج","حد پایین ٪","حد بالا ٪","توضیح"],fmt:["t","d","d","i","i","d","d","t"],w:[44,16,16,12,12,14,14,40],rows:sum},
+  sh("بر حسب نوع دام",grp(rs,function(r){return r.type})),sh("بر حسب تشخیص",grp(rs,dxKey,true)),sh("بر حسب روستا",grp(rs,function(r){return r.village.trim()},true)),sh("بر حسب ماه",grp(rs,function(r){return dateOf(r).slice(0,7)}))])}
+var persisted=null,usage=null;
+function lastB(){try{return Number(localStorage.getItem("damnegar:backup"))||0}catch(e){return 0}}
+function lastC(){try{return Number(localStorage.getItem("damnegar:changed"))||0}catch(e){return 0}}
+function updPers(){var t=["آخرین پشتیبان‌گیری: "+(lastB()?fa(jdate(lastB())):"هنوز انجام نشده")];
+ if(persisted!==null)t.push("حافظه پایدار: "+(persisted?"فعال":"غیرفعال (مرورگر ممکن است در کمبود فضا داده‌ها را پاک کند)"));
+t.push(phMode==="idb"?"ذخیره عکس: کامل":"ذخیره عکس: حالت محدود (IndexedDB کار نکرد"+(phErr?": "+phErr:"")+")");
+ if(usage!=null)t.push("فضای مصرفی: "+fa((usage/1048576).toFixed(1))+" مگابایت");
+ $("pers").textContent=t.join(" · ")}
+function initPersist(){var st=navigator.storage;if(!st)return;
+ if(st.persisted)st.persisted().then(function(p){return p?p:(st.persist?st.persist():false)}).then(function(p){persisted=!!p;updPers()},function(){});
+ if(st.estimate)st.estimate().then(function(e){usage=e.usage;updPers()},function(){})}
+function nrm(v){return digits(String(v==null?"":v)).replace(/ي/g,"ی").replace(/ى/g,"ی").replace(/ك/g,"ک").replace(/[\u200c\u200f\u200e\u0640]/g," ").replace(/\s+/g," ").trim().toLowerCase()}
+function nameIndex(a,field){var m={};a.forEach(function(r,i){var raw=(r[field]||"").trim(),k=nrm(raw);if(!k)return;
+ var e=m[k]||(m[k]={k:k,n:0,sp:{},last:-1,lastRaw:raw,lastVillage:""});e.n++;e.sp[raw]=(e.sp[raw]||0)+1;
+ var t=r.at||i;if(t>=e.last){e.last=t;e.lastRaw=raw;e.lastVillage=(r.village||"").trim()}});
+ Object.keys(m).forEach(function(k){var e=m[k],best="",bn=-1;Object.keys(e.sp).forEach(function(x){if(e.sp[x]>bn||(e.sp[x]===bn&&x===e.lastRaw)){best=x;bn=e.sp[x]}});e.disp=best});return m}
+function fillList(id,arr){var d=$(id);d.innerHTML="";arr.forEach(function(t){var o=document.createElement("option");o.value=t;d.appendChild(o)})}
+function byRecent(m){return Object.keys(m).map(function(k){return m[k]}).sort(function(x,y){return y.last-x.last})}
+var IDX={owner:{},village:{},vet:{}};
+function refreshLists(){var a=load();IDX.owner=nameIndex(a,"owner");IDX.village=nameIndex(a,"village");IDX.vet=nameIndex(a,"vet");
+ fillList("dl-owner",byRecent(IDX.owner).map(function(e){return e.disp}));fillList("dl-vet",byRecent(IDX.vet).map(function(e){return e.disp}));refreshVillages(a)}
+function refreshVillages(a){a=a||load();var o=IDX.owner[nrm($("owner").value)],first=[],seen={};
+ if(o){a.filter(function(r){return nrm(r.owner)===o.k}).sort(function(x,y){return (y.at||0)-(x.at||0)}).forEach(function(r){var k=nrm(r.village);if(k&&!seen[k]){seen[k]=1;first.push(IDX.village[k].disp)}})}
+ byRecent(IDX.village).forEach(function(e){if(!seen[e.k])first.push(e.disp)});fillList("dl-village",first)}
+function dupHint(field){var inp=$(field),h=$("h-"+field),v=inp.value.trim(),e=v&&IDX[field]&&IDX[field][nrm(v)];
+ if(e&&e.disp!==v){h.firstElementChild.textContent="قبلاً به شکل «"+e.disp+"» ثبت شده است؛ برای یکسان‌ماندن نام‌ها همان را استفاده کنید.";h.lastElementChild.onclick=function(){inp.value=e.disp;h.hidden=true;if(field==="owner")ownerPicked()};h.hidden=false}else h.hidden=true}
+function ownerPicked(){var e=IDX.owner[nrm($("owner").value)];refreshVillages();if(e&&!$("village").value.trim()&&e.lastVillage){$("village").value=e.lastVillage;$("village").dataset.pre="1";dupHint("village")}}
+function listRows(a){var q=nrm($("lq").value),toks=q?q.split(" "):[],srt=$("lsort").value;
+ var rows=a.map(function(r,i){return {r:r,i:i}});
+ if(toks.length)rows=rows.filter(function(x){var r=x.r,hay=nrm([r.owner,r.village,r.vet,r.type,r.signs,dxText(r),isNotif(r)?"قابل اعلام":"",r.vac,vaxText(r),r.vacNote,r.dxCat,dateOf(r),r.baseId?"پیگیری":"",ordText(r)].join(" "));return toks.every(function(t){return hay.indexOf(t)>=0})});
+ var vd=function(x){return dateOf(x.r)};
+ rows.sort(function(x,y){if(srt==="vnew")return vd(x)<vd(y)?1:vd(x)>vd(y)?-1:y.i-x.i;if(srt==="vold")return vd(x)<vd(y)?-1:vd(x)>vd(y)?1:x.i-y.i;if(srt==="owner"){var ox=nrm(x.r.owner),oy=nrm(y.r.owner);return ox<oy?-1:ox>oy?1:y.i-x.i}return y.i-x.i});
+ return rows.map(function(x){return x.r})}
+var ID_RE=/^[a-z0-9]{1,24}$/,OID_RE=/^o[a-z0-9]{6,23}$/,curOwnerId=null,curProfile=null,BYID={};
+function validOid(v){return typeof v==="string"&&OID_RE.test(v)}
+function junkId(v){return v==="undefined"||v==="null"}
+function clone(a){return JSON.parse(JSON.stringify(a))}
+function newOid(){return "o"+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function cmpVisit(x,y){var dx=dateOf(x),dy=dateOf(y);return dx<dy?1:dx>dy?-1:(y.at||0)-(x.at||0)}
+function groupsOf(a){var g={};a.forEach(function(r){if(!validOid(r.ownerId)||!nrm(r.owner))return;var e=g[r.ownerId]||(g[r.ownerId]={id:r.ownerId,reports:[],names:{},vill:{}});e.reports.push(r);e.names[nrm(r.owner)]=1;e.vill[nrm(r.village)]=1});
+ Object.keys(g).forEach(function(k){g[k].reports.sort(cmpVisit)});return g}
+function assignOwnerIds(a,targets){
+ var map={},amb={},g=groupsOf(a),newMap={},n=0;
+ Object.keys(g).forEach(function(id){Object.keys(g[id].names).forEach(function(nm){Object.keys(g[id].vill).forEach(function(v){var k=nm+"|"+v;if(map[k]&&map[k]!==id)amb[k]=1;map[k]=id})})});
+ targets.forEach(function(r){var nm=nrm(r.owner);if(!nm)return;var k=nm+"|"+nrm(r.village);
+  r.ownerId=(!amb[k]&&map[k])?map[k]:(newMap[k]||(newMap[k]=newOid()));n++});
+ return n}
+function needsOwnerFix(a){return a.some(function(r){return (nrm(r.owner)&&!validOid(r.ownerId))||junkId(r.baseId)||junkId(r.ownerId)})}
+function ensureOwnerIds(){
+ var a=load();if(!needsOwnerFix(a))return 0;
+ var keys=["damnegar:pre-owners","damnegar:pre-owners-2"],done=false;
+ try{for(var i=0;i<keys.length&&!done;i++){if(localStorage.getItem(keys[i])===null){localStorage.setItem(keys[i],JSON.stringify(a));done=true}}}catch(e){return -1}
+ var tg=a.filter(function(r){return nrm(r.owner)&&!validOid(r.ownerId)});
+ a.forEach(function(r){if(junkId(r.baseId))r.baseId="";if(!nrm(r.owner)&&r.ownerId!==undefined&&!validOid(r.ownerId))r.ownerId=""});
+ var n=assignOwnerIds(a,tg);return save(a)?Math.max(n,1):-2}
+function askChoice(title,msg,opts){return new Promise(function(res){
+ $("cht").textContent=title;$("chm").textContent=msg;var box=$("cho");box.innerHTML="";
+ function done(v){$("choice").hidden=true;$("chx").onclick=null;window.__chCancel=null;res(v)}
+ opts.forEach(function(o){var b=document.createElement("button");b.type="button";b.className="opt";b.textContent=o.label;if(o.sub){var sm=document.createElement("small");sm.textContent=o.sub;b.appendChild(sm)}b.onclick=function(){done(o.value)};box.appendChild(b)});
+ $("chx").onclick=function(){done(null)};window.__chCancel=function(){done(null)};$("choice").hidden=false;$("choice").scrollTop=0})}
+function vOf(e){var r=e.reports[0];return r.village}
+function resolveOwner(name,village,curId){
+ var a=load(),G=groupsOf(a),k=nrm(name),vk=nrm(village);
+ function fresh(){var cands=Object.keys(G).map(function(i){return G[i]}).filter(function(e){return e.names[k]});
+  var same=cands.filter(function(e){return e.vill[vk]});
+  if(!cands.length)return Promise.resolve({id:newOid()});
+  if(same.length===1)return Promise.resolve({id:same[0].id});
+  var list=same.length?same:cands;
+  var opts=list.map(function(e){var r=e.reports[0];return {value:e.id,label:"همان دامدار: «"+r.owner+"» — روستای "+r.village,sub:fa(e.reports.length)+" بازدید ثبت‌شده · آخرین بازدید "+fa(dateOf(r))}});
+  opts.push({value:"__new",label:"دامدار جدید با همین نام",sub:"یک پرونده جدا ساخته می‌شود و با پرونده‌های دیگر ادغام نمی‌شود."});
+  return askChoice("دامدار هم‌نام پیدا شد","«"+name+"» قبلاً ثبت شده است. این گزارش مربوط به کدام دامدار است؟",opts).then(function(v){if(v===null)return null;return {id:v==="__new"?newOid():v}})}
+ if(curId&&G[curId]){
+  if(G[curId].names[k])return Promise.resolve({id:curId});
+  var old=G[curId].reports[0].owner;
+  return askChoice("نام دامدار تغییر کرده است","نام واردشده با نام ثبت‌شده در این پرونده («"+old+"») فرق دارد. چه کنم؟",[
+   {value:"keep",label:"همان دامدار است؛ فقط در این گزارش نام را اصلاح کن",sub:"پرونده تغییر نمی‌کند و نام بقیه گزارش‌ها دست‌نخورده می‌ماند."},
+   {value:"all",label:"نام همه گزارش‌های این پرونده را اصلاح کن",sub:"برای اصلاح غلط املایی نام دامدار."},
+   {value:"other",label:"این گزارش مربوط به دامدار دیگری است",sub:"پرونده این گزارش جدا یا به دامدار هم‌نام دیگری وصل می‌شود."}
+  ]).then(function(v){if(v===null)return null;if(v==="keep")return {id:curId};if(v==="all")return {id:curId,renameAll:true};return fresh()})}
+ return fresh()}
+function canon(r){var o={};Object.keys(r).sort().forEach(function(k){if(k==="ownerId"||k==="photos")return;var v=r[k];if(v===""||v===null||v===undefined||(Array.isArray(v)&&!v.length))return;o[k]=v});return JSON.stringify(o)}
+function sameRec(stored,incoming){return canon(cleanRec0(stored,{})||stored)===canon(incoming)}
+function restoredLinks(all,inc){var by={},o={self:0,cross:0,dangling:0,cycle:0};all.forEach(function(r){by[r.id]=r});
+ inc.forEach(function(c){if(!c.baseId)return;
+  if(c.baseId===c.id){c.baseId="";o.self++;return}
+  var t=by[c.baseId];if(!t){o.dangling++;return}
+  if(c.ownerId&&t.ownerId&&t.ownerId!==c.ownerId){c.baseId="";o.cross++}});
+ inc.forEach(function(c){var vis={},cu=c,path=[];while(cu&&cu.baseId&&!vis[cu.id]){vis[cu.id]=1;path.push(cu);cu=by[cu.baseId]}
+  if(cu&&vis[cu.id]){var cyc=path.slice(path.indexOf(cu)).filter(function(x){return inc.indexOf(x)>=0}).sort(cmpVisit);if(cyc.length){cyc[0].baseId="";o.cycle++}}});
+ return o}
+function mergeOwners(from,to){if(!from||!to||from===to)return false;var a=clone(load());a.forEach(function(r){if(r.ownerId===from)r.ownerId=to});return save(a)}
+function moveChain(a,id,oldOid,newId,mode){
+ var r=a.filter(function(x){return x.id===id})[0],out={moved:0,detached:0};if(!r)return out;
+ var desc=descendants(id,a);
+ r.baseId="";r.ownerId=newId;out.moved=1;
+ if(mode==="move"){a.forEach(function(x){if(x.id!==id&&desc[x.id]&&x.ownerId===oldOid){x.ownerId=newId;out.moved++}})}
+ else if(mode==="detach"){a.forEach(function(x){if(x.baseId===id){x.baseId="";out.detached++}})}
+ return out}
+function followInfo(a,id){var r=a.filter(function(x){return x.id===id})[0],d=descendants(id,a),n=0;
+ a.forEach(function(x){if(r&&x.id!==id&&d[x.id]&&x.ownerId===r.ownerId)n++});
+ return {r:r,deps:n,kids:a.filter(function(x){return x.baseId===id}).length}}
+function askDeps(info,title){
+ return askChoice(title,"این گزارش مبنای "+fa(info.kids)+" ویزیت پیگیری مستقیم است و در کل "+fa(info.deps)+" پیگیری در همین پرونده به آن وابسته‌اند. با آن‌ها چه کنم؟"+((info.r&&info.r.baseId)?" توجه: ارتباط خود این گزارش با گزارش مبنای قبلی‌اش (که در پرونده فعلی می‌ماند) در هر حال قطع می‌شود.":""),[
+  {value:"move",label:"پیگیری‌ها هم با این گزارش به پرونده مقصد بروند (پیشنهادی)",sub:"این گزارش و همه ویزیت‌های پیگیری وابسته‌اش، از جمله زنجیره‌ای، با ارتباط‌های سالم منتقل می‌شوند."},
+  {value:"detach",label:"پیگیری‌ها در پرونده فعلی بمانند",sub:"فقط ارتباط پیگیری‌های مستقیم با این گزارش قطع می‌شود؛ خود پیگیری‌ها حذف یا منتقل نمی‌شوند."}])}
+function doSplit(id,mode){var a=clone(load()),r=a.filter(function(x){return x.id===id})[0];if(!r)return {saved:false,moved:0,detached:0};
+ var res=moveChain(a,id,r.ownerId,newOid(),mode);res.saved=save(a);return res}
+function descendants(id,a){var out={},ch=true;out[id]=1;while(ch){ch=false;a.forEach(function(r){if(r.baseId&&out[r.baseId]&&!out[r.id]){out[r.id]=1;ch=true}})}return out}
+function baseLabel(r){return fa(dateOf(r))+" · "+r.village+" · "+r.type+(dxText(r)?" · "+dxText(r):"")}
+function setFu(oid,baseId){curOwnerId=oid;var a=load(),g=groupsOf(a)[oid];if(!g){curOwnerId=null;$("fubar").hidden=true;renderChecks();return}
+ $("funame").textContent=g.reports[0].owner;var ex=editingId?descendants(editingId,a):{},sel=$("fubase");sel.innerHTML="";
+ var o0=document.createElement("option");o0.value="";o0.textContent="بدون ویزیت مبنا";sel.appendChild(o0);
+ g.reports.forEach(function(r){if(ex[r.id])return;var o=document.createElement("option");o.value=r.id;o.textContent=baseLabel(r);sel.appendChild(o)});
+ sel.value=baseId||"";if(sel.value!==(baseId||""))sel.value="";$("fubar").hidden=false;renderChecks()}
+function kv(l,v){return (v===""||v==null)?"":'<b>'+esc(l)+'</b><span>'+v+'</span>'}
+function closeOverlays(){["sheet","rdetail","ownerpage","about"].forEach(function(i){$(i).hidden=true})}
+function openProfile(oid){var a=load(),G=groupsOf(a),e=G[oid];
+ if(!e){toast("پرونده‌ای برای این دامدار پیدا نشد.");return}
+ curProfile=oid;var rs=e.reports,last=rs[0],vc={},types=[],fu={};
+ rs.forEach(function(r){var k=nrm(r.village);vc[k]=vc[k]||{n:0,d:r.village};vc[k].n++;if(types.indexOf(r.type)<0)types.push(r.type);if(r.baseId)fu[r.baseId]=(fu[r.baseId]||0)+1});
+ $("pgt").textContent="پرونده دامدار: "+last.owner;
+ var h='<div class="pstat"><div>بازدیدها<b>'+fa(rs.length)+'</b></div><div>آخرین بازدید<b>'+esc(fa(dateOf(last)))+'</b></div><div>آخرین نوع دام<b>'+esc(last.type)+'</b></div></div>';
+ h+='<div class="kv">'+kv("روستا / محل",esc(Object.keys(vc).map(function(k){return vc[k].d+" ("+fa(vc[k].n)+")"}).join("، ")))+kv("انواع دام",esc(types.join("، ")))+kv("آخرین تشخیص",esc((rs.filter(function(r){return dxText(r)})[0]||{}).dx?dxText(rs.filter(function(r){return dxText(r)})[0]):""))+'</div>';
+ h+='<button type="button" class="go" data-fu="'+last.id+'" style="margin-top:6px">ثبت ویزیت پیگیری</button>';h+=openOrdersHtml(a,rs);
+ var same=Object.keys(G).map(function(i){return G[i]}).filter(function(x){return x.id!==oid&&Object.keys(x.names).some(function(n){return e.names[n]})});
+ if(same.length){h+='<div class="sub">دامداران هم‌نام در پرونده‌های دیگر</div><p class="meta">این‌ها به‌صورت خودکار با این پرونده ادغام نشده‌اند. فقط اگر مطمئنید یک نفرند ادغام کنید؛ ادغام فقط پرونده‌ها را به هم وصل می‌کند و اطلاعات گزارش‌ها را تغییر نمی‌دهد.</p>';
+  same.forEach(function(x){var r=x.reports[0];h+='<div class="item"><b>'+esc(r.owner)+'</b> — روستای '+esc(r.village)+' · '+fa(x.reports.length)+' بازدید · آخرین: '+esc(fa(dateOf(r)))+'<p><button type="button" class="ghost sm" data-oid="'+x.id+'">دیدن پرونده</button><button type="button" class="ghost sm" data-merge="'+x.id+'">ادغام در این پرونده</button></p></div>'})}
+ h+='<div class="sub">تاریخچه بازدیدها (جدیدترین اول)</div>';
+ rs.forEach(function(r){var base=r.baseId&&a.filter(function(x){return x.id===r.baseId})[0];
+  h+='<article class="item"><div class="h"><span><b>'+esc(fa(dateOf(r)))+'</b> · '+esc(r.village)+' · '+esc(r.type)+'</span><span>'+(r.baseId?'<span class="tag">پیگیری</span>':'')+(isNotif(r)?'<span class="tag hi">قابل اعلام</span>':'')+'</span></div>'
+   +(r.baseId?'<div class="meta">'+(base?'پیگیری بازدید '+esc(fa(dateOf(base)))+(base.village?' ('+esc(base.village)+')':''):'گزارش مبنا در دسترس نیست')+'</div>':'')
+   +(fu[r.id]?'<div class="meta">'+fa(fu[r.id])+' ویزیت پیگیری برای این بازدید ثبت شده است.</div>':'')+ordMeta(a,r)
+   +(r.signs?'<p>'+esc(r.signs.length>110?r.signs.slice(0,110)+"…":r.signs)+'</p>':'')+(dxText(r)?'<p><b>تشخیص:</b> '+esc(dxText(r))+'</p>':'')
+   +'<p><button type="button" class="ghost sm" data-view="'+r.id+'">مشاهده گزارش کامل</button><button type="button" class="ghost sm" data-fu="'+r.id+'">پیگیری از این بازدید</button><button type="button" class="ghost sm" data-split="'+r.id+'">جدا کردن از این پرونده</button></p></article>'});
+ $("pbody").innerHTML=h;$("ownerpage").hidden=false;$("ownerpage").scrollTop=0;fillThumbs($("pbody"))}
+function showReport(id){var a=load(),r=a.filter(function(x){return x.id===id})[0];if(!r){toast("گزارش پیدا نشد.");return}
+ var base=r.baseId&&a.filter(function(x){return x.id===r.baseId})[0],fus=a.filter(function(x){return x.baseId===r.id}).sort(cmpVisit),p=pct(r.sick,r.total);
+ var vtxt=r.vac+(vaxText(r)?" — "+vaxText(r):"")+(r.vacCount?" ("+fa(r.vacCount)+" رأس)":"");
+ var h='<div class="kv">'+kv("دامدار",r.owner?(r.ownerId&&ID_RE.test(r.ownerId)?'<button type="button" class="lnk" data-oid="'+r.ownerId+'">'+esc(r.owner)+'</button>':esc(r.owner)):"")
+  +kv("تاریخ بازدید یا وقوع",esc(fa(dateOf(r)))+(r.vdate?"":" <span class=\"meta\">(تاریخ بازدید ثبت نشده بود؛ از تاریخ ثبت برداشته شده)</span>"))+kv("دامپزشک",esc(r.vet||""))+kv("نوع دام",esc(r.type))+kv("روستا / محل",esc(r.village))
+  +kv("نوع ویزیت",r.baseId?"پیگیری"+(base?" — بازدید "+esc(fa(dateOf(base))):" (گزارش مبنا در دسترس نیست)"):"عادی")
+  +kv("دام بررسی‌شده",esc(nf.format(r.total)))+kv("دارای نشانه",esc(nf.format(r.sick)+" ("+nf.format(p)+"٪)"))+kv("کل دام‌های دامداری",r.herd?esc(nf.format(r.herd)):"")+kv("تلفات",r.dead!=null?esc(nf.format(r.dead)):"")
+  +kv("نشانه‌ها",esc(r.signs||"").replace(/\n/g,"<br>"))+kv("تشخیص",dxText(r)?esc(dxText(r))+(isNotif(r)?' <span class="tag hi">قابل اعلام</span>':""):"")
+  +kv("واکسیناسیون",esc(vtxt))+kv("برند / توضیحات واکسن",esc(r.vacNote||""))
+  +kv("موقعیت",r.lat!=null?esc(fa(r.lat.toFixed(5))+"، "+fa(r.lon.toFixed(5)))+' · <a href="https://www.openstreetmap.org/?mlat='+r.lat+"&mlon="+r.lon+"#map=14/"+r.lat+"/"+r.lon+'" target="_blank" rel="noopener">دیدن روی نقشه</a>':"")
+  +kv("ویزیت‌های پیگیری",fus.length?fus.map(function(x){return '<button type="button" class="lnk" data-view="'+x.id+'">'+esc(fa(dateOf(x)))+'</button>'}).join("، "):"")
+  +kv("تاریخ ثبت در دام‌نگار",esc(fa(jdate(r.at))))+'</div>';
+ if((r.photos||[]).length)h+='<div class="thumbs">'+r.photos.filter(function(i){return ID_RE.test(i)}).map(function(i){return '<img data-ph="'+i+'" alt="تصویر">'}).join("")+'</div>';
+ h+=ordersDetail(a,r);
+ h+='<p style="margin-top:12px"><button type="button" class="ghost sm" data-edit2="'+r.id+'">ویرایش این گزارش</button><button type="button" class="ghost sm" data-sheet="'+r.id+'">مشاهده برگه دستور</button><button type="button" class="ghost sm" data-sheetprint="'+r.id+'">چاپ برگه دستور</button><button type="button" class="ghost sm" data-print="1">چاپ این گزارش</button>'+(r.ownerId&&nrm(r.owner)?'<button type="button" class="ghost sm" data-fu="'+r.id+'">ثبت ویزیت پیگیری از این گزارش</button>':'')+'</p>';
+ $("rbody").innerHTML=h;$("rdetail").hidden=false;$("rdetail").scrollTop=0;fillThumbs($("rbody"))}
+function startFollowUp(baseId){var a=load(),b=a.filter(function(x){return x.id===baseId})[0];if(!b||!b.ownerId){toast("پرونده این دامدار پیدا نشد.");return}
+ closeOverlays();resetForm();
+ var t=document.querySelector('input[name=type][value="'+b.type+'"]');if(t)t.checked=true;rebuildDx();
+ $("owner").value=b.owner;$("village").value=b.village;$("vet").value=b.vet||"";
+ if(b.lat!=null){$("lat").value=String(b.lat);$("lon").value=String(b.lon);geoAcc=b.acc||null;syncGeo()}
+ if(b.herd)$("herd").value=String(b.herd);
+ setFu(b.ownerId,b.id);refreshVillages();live();
+ toast("فرم ویزیت پیگیری باز شد؛ اطلاعات این بازدید را وارد کنید.");$("f").scrollIntoView({behavior:"smooth",block:"start"});$("total").focus()}
+var curSheet=null;
+function sheetCols(os){var C=[["نوع دستور",function(o){return o.type}],["عنوان و شرح دستور",function(o){return o.title}],["نام دارو یا ماده",function(o){return o.drug}],["مقدار و واحد",function(o){return [o.dose,o.unit].filter(Boolean).join(" ")}],["روش تجویز یا اجرا",function(o){return o.route}],["دفعات و مدت اجرا",function(o){return [o.freq,o.duration?"مدت: "+o.duration:""].filter(Boolean).join(" — ")}],["تاریخ شروع",function(o){return o.start?fa(o.start):""}],["مهلت پیگیری",function(o){return o.due?fa(o.due):""}],["توضیحات تکمیلی",function(o){return o.notes}]];
+ return C.filter(function(c){return os.some(function(o){return c[1](o)})})}
+function sheetHtml(r){var os=r.orders||[],lg=document.querySelector("header .logo"),logo=lg?lg.innerHTML:"";
+ var meta=[["تاریخ ویزیت",fa(dateOf(r))],["نام دامدار",r.owner||""],["روستا یا محدوده",r.village||""],["نوع دام",r.type||""],["نام دامپزشک",r.vet||""]].filter(function(x){return x[1]});
+ var h='<div class="sh-head"><div class="sh-brand"><span class="logo" aria-hidden="true">'+logo+'</span><div><b>دام‌نگار</b><div>سوما زیست</div></div></div><div class="sh-title">برگه دستورات دامپزشکی</div><div class="sh-id">شناسه گزارش: <span dir="ltr">'+esc(r.id)+'</span></div></div>'
+  +'<div class="sh-meta">'+meta.map(function(x){return '<div><b>'+esc(x[0])+':</b> '+esc(x[1])+'</div>'}).join("")+'</div>';
+ if(!os.length)return h+'<p class="sh-empty">برای این ویزیت دستوری ثبت نشده است.</p>';
+ var cols=sheetCols(os);
+ h+='<table class="sh-tb"><thead><tr><th>ردیف</th>'+cols.map(function(c){return '<th>'+esc(c[0])+'</th>'}).join("")+'</tr></thead><tbody>'
+  +os.map(function(o,i){return '<tr><td>'+fa(i+1)+'</td>'+cols.map(function(c){return '<td>'+esc(c[1](o)).replace(/\n/g,"<br>")+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table>'
+  +'<div class="sh-foot"><div class="sh-note"><b>توضیحات تکمیلی دامپزشک:</b></div><div class="sh-sign"><div><b>امضای دامپزشک</b><div class="sgl"></div></div><div><b>امضای دامدار یا مسئول واحد</b><div class="sgl"></div></div><div><b>تاریخ تحویل برگه</b><div class="sgl"></div></div></div></div>';
+ return h}
+function openSheet(id,andPrint){var r=load().filter(function(x){return x.id===id})[0];if(!r){toast("گزارش پیدا نشد.");return}
+ curSheet=id;$("shpaper").innerHTML=sheetHtml(r);var has=!!(r.orders||[]).length;$("shprint").hidden=!has;$("sheet").hidden=false;$("sheet").scrollTop=0;
+ if(andPrint&&has)setTimeout(printSheet,80)}
+function printSheet(){if($("sheet").hidden||$("shprint").hidden)return;document.body.dataset.print="sheet";window.print()}
+window.addEventListener("beforeprint",function(){var d=document.body.dataset;if(!$("sheet").hidden)d.print="sheet";else if(!$("rdetail").hidden)d.print="report";else delete d.print});
+window.addEventListener("afterprint",function(){delete document.body.dataset.print});
+$("shprint").addEventListener("click",printSheet);$("shx").addEventListener("click",function(){$("sheet").hidden=true});
+var CALICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>';
+var JF=(function(){try{var f=new Intl.DateTimeFormat("en-u-ca-persian-nu-latn",{timeZone:"UTC",year:"numeric",month:"numeric",day:"numeric"});return f.resolvedOptions().calendar==="persian"?f:null}catch(e){return null}})();
+var JC={};
+function gToJ(dt){if(!JF)return null;var o={};JF.formatToParts(dt).forEach(function(x){o[x.type]=x.value});return {y:+o.year,m:+o.month,d:+o.day}}
+function jToG(y,m,d){if(!JF)return null;var k=y*10000+m*100+d;if(JC[k]!==undefined)return JC[k]===null?null:new Date(JC[k]);
+ var L=Math.floor(Date.UTC(y+621,0,1)/864e5),H=Math.floor(Date.UTC(y+622,11,31)/864e5),found=null;
+ while(L<=H){var M=(L+H)>>1,j=gToJ(new Date(M*864e5+432e5)),kk=j.y*10000+j.m*100+j.d;if(kk===k){found=M*864e5+432e5;break}if(kk<k)L=M+1;else H=M-1}
+ JC[k]=found;return found===null?null:new Date(found)}
+function jOk(y,m,d){return JF?!!jToG(y,m,d):d<=jDays(y,m)}
+function jLen(y,m){var d=31;while(d>28&&!jOk(y,m,d))d--;return d}
+var JM=["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"],JW=["ش","ی","د","س","چ","پ","ج"];
+var cal={el:null,y:1405,m:1,req:false},coarse=!!(window.matchMedia&&window.matchMedia("(pointer:coarse)").matches);
+function p2(n){return ("0"+n).slice(-2)}
+function calRender(){var sel=parseJ(cal.el.value),sj=sel?sel.split("/").map(Number):null,td=(parseJ(todayJ())||"").split("/").map(Number),g=$("jc-grid");
+ $("jc-y").value=String(cal.y);$("jc-m").value=String(cal.m);
+ var first=(jToG(cal.y,cal.m,1).getUTCDay()+1)%7,len=jLen(cal.y,cal.m),h="";
+ for(var i=0;i<first;i++)h+='<i></i>';
+ for(var d=1;d<=len;d++){var col=(first+d-1)%7,cls=(col===6?"fri ":"")+((td[0]===cal.y&&td[1]===cal.m&&td[2]===d)?"today ":"")+((sj&&sj[0]===cal.y&&sj[1]===cal.m&&sj[2]===d)?"sel":"");
+  h+='<button type="button" class="'+cls+'" data-d="'+d+'" aria-label="'+fa(d)+" "+JM[cal.m-1]+" "+fa(cal.y)+'">'+fa(d)+'</button>'}
+ g.innerHTML=h;$("jc-clear").hidden=cal.req===false;}
+function calMove(dy,dm){var y=cal.y+dy,m=cal.m+dm;while(m<1){m+=12;y--}while(m>12){m-=12;y++}if(y<1300||y>1500)return;cal.y=y;cal.m=m;calRender()}
+function openCal(el,optional){if(!JF)return;cal.el=el;cal.req=!!optional;var v=parseJ(el.value)||parseJ(todayJ());var a=v.split("/").map(Number);cal.y=a[0];cal.m=a[1];
+ var ys=$("jc-y");if(!ys.options.length){for(var y=1300;y<=1500;y++){var o=document.createElement("option");o.value=String(y);o.textContent=fa(y);ys.appendChild(o)}
+  var ms=$("jc-m");JM.forEach(function(n,i){var o=document.createElement("option");o.value=String(i+1);o.textContent=n;ms.appendChild(o)});
+  $("jc-wd").innerHTML=JW.map(function(x){return '<span>'+x+'</span>'}).join("")}
+ $("jcal").hidden=false;calRender();var t=$("jc-grid").querySelector(".sel,.today");if(t&&t.focus)t.focus({preventScroll:true})}
+function calClose(){$("jcal").hidden=true;cal.el=null}
+function calSet(v){var el=cal.el;if(!el)return;el.value=v;el.dispatchEvent(new Event("input",{bubbles:true}));el.dispatchEvent(new Event("change",{bubbles:true}));calClose()}
+function wrapDate(id,optional){var el=$(id),w=document.createElement("div");if(!el||!JF)return;w.className="dwrap";el.parentNode.insertBefore(w,el);w.appendChild(el);
+ var b=document.createElement("button");b.type="button";b.className="dpbtn";b.setAttribute("aria-label","انتخاب تاریخ از تقویم");b.innerHTML=CALICON;w.appendChild(b);
+ b.addEventListener("click",function(){openCal(el,optional)});if(coarse){el.setAttribute("inputmode","none");el.addEventListener("click",function(){openCal(el,optional)})}
+ el.addEventListener("change",function(){var v=parseJ(el.value);if(v)el.value=fa(v)})}
+function vdCheck(){var w=$("vdwarn"),bs=$("fubase").value,v=parseJ($("vdate").value),b=bs&&load().filter(function(r){return r.id===bs})[0];
+ w.textContent=(v&&b&&v<dateOf(b))?"توجه: تاریخ این پیگیری قبل از تاریخ ویزیت مبنا ("+fa(dateOf(b))+") است. اگر درست است ادامه دهید.":""}
+var OTYPES=["دارویی و درمانی", "بهداشتی و مدیریتی", "تغذیه‌ای", "واکسیناسیون و پیشگیری", "آزمایش، نمونه‌گیری و تشخیص", "سایر"],OSTAT=["ثبت‌شده / در انتظار اجرا", "در حال اجرا", "انجام‌شده", "انجام‌نشده", "لغوشده"],OPENST=[OSTAT[0],OSTAT[1]],ordDraft=[],ordEditIdx=-1,editChecks=[],chkDraft={},chkKeep=[],chkShown=[];
+function s2(v,n){return typeof v==="string"?v.trim().slice(0,n):""}
+function newDid(){return "d"+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+function cleanOrders(arr){var out=[];if(!Array.isArray(arr))return out;
+ arr.slice(0,60).forEach(function(o){if(!o||typeof o!=="object")return;var t=s2(o.title,200);if(!t)return;
+  out.push({id:(typeof o.id==="string"&&ID_RE.test(o.id)&&!junkId(o.id))?o.id:newDid(),type:OTYPES.indexOf(o.type)>=0?o.type:OTYPES[5],title:t,drug:s2(o.drug,150),dose:s2(o.dose,60),unit:s2(o.unit,40),route:s2(o.route,60),freq:s2(o.freq,100),duration:s2(o.duration,100),start:parseJ(o.start||"")||"",due:parseJ(o.due||"")||"",notes:s2(o.notes,600),status:OSTAT.indexOf(o.status)>=0?o.status:OSTAT[0],statusNote:s2(o.statusNote,400),lastFollow:parseJ(o.lastFollow||"")||""})});
+ var seen={};out.forEach(function(o){if(seen[o.id])o.id=newDid();seen[o.id]=1});return out}
+function cleanChecks(arr){var out=[];if(!Array.isArray(arr))return out;
+ arr.slice(0,300).forEach(function(c){if(!c||typeof c!=="object")return;if(typeof c.ref!=="string"||!ID_RE.test(c.ref)||junkId(c.ref)||typeof c.ord!=="string"||!ID_RE.test(c.ord)||junkId(c.ord)||OSTAT.indexOf(c.status)<0)return;
+  out.push({ref:c.ref,ord:c.ord,status:c.status,note:s2(c.note,300),date:parseJ(c.date||"")||""})});return out}
+function ordDrops(x,c){var n=0;if(Array.isArray(x.orders))n+=Math.max(0,x.orders.length-c.orders.length);if(Array.isArray(x.orderChecks))n+=Math.max(0,x.orderChecks.length-c.orderChecks.length);return n}
+function ordSummary(o){var p=[];if(o.drug)p.push(o.drug);var d=[o.dose,o.unit].filter(Boolean).join(" ");if(d)p.push(d);if(o.route)p.push(o.route);if(o.freq)p.push(o.freq);if(o.duration)p.push("مدت: "+o.duration);return p.join(" · ")}
+function ordText(r){return (r.orders||[]).map(function(o){return [o.title,o.drug,o.type].join(" ")}).join(" ")}
+function orderState(a,rep,o,ex){
+ var st={status:o.status,date:o.lastFollow||dateOf(rep),note:o.statusNote||"",hist:[{src:"ثبت اولیه",rid:rep.id,status:o.status,date:o.lastFollow||dateOf(rep),note:o.statusNote||""}]},cs=[];
+ if(rep.ownerId)a.forEach(function(r){if(r.ownerId!==rep.ownerId||r.id===ex)return;(r.orderChecks||[]).forEach(function(c){if(c.ref===rep.id&&c.ord===o.id)cs.push({c:c,r:r})})});
+ cs.sort(function(x,y){var dx=dateOf(x.r),dy=dateOf(y.r);if(dx!==dy)return dx<dy?-1:1;var cx=x.c.date||dx,cy=y.c.date||dy;if(cx!==cy)return cx<cy?-1:1;return (x.r.at||0)-(y.r.at||0)});
+ cs.forEach(function(x){var h={src:"پیگیری در بازدید",rid:x.r.id,status:x.c.status,date:x.c.date||dateOf(x.r),note:x.c.note||""};st.hist.push(h);st.status=h.status;st.date=h.date;st.note=h.note});
+ return st}
+function chainOrders(a,baseId,ex){var out=[],seen={},cur=a.filter(function(r){return r.id===baseId})[0],first=true,hop=0,oid=cur&&cur.ownerId;
+ while(cur&&!seen[cur.id]&&hop<40){seen[cur.id]=1;hop++;
+  (function(c){(c.orders||[]).forEach(function(o){var st=orderState(a,c,o,ex);if(first||OPENST.indexOf(st.status)>=0)out.push({rep:c,o:o,st:st})})})(cur);
+  first=false;var nb=cur.baseId,nx=nb?a.filter(function(r){return r.id===nb})[0]:null;cur=(nx&&nx.ownerId===oid)?nx:null}
+ return out}
+function ordMeta(a,r){var os=r.orders||[];if(!os.length)return "";var open=0;os.forEach(function(o){if(OPENST.indexOf(orderState(a,r,o,null).status)>=0)open++});return '<div class="meta">دستورات: '+fa(os.length)+' · باز: '+fa(open)+'</div>'}
+function openOrdersHtml(a,rs){var items=[];rs.forEach(function(r){(r.orders||[]).forEach(function(o){var st=orderState(a,r,o,null);if(OPENST.indexOf(st.status)>=0)items.push({r:r,o:o,st:st})})});
+ if(!items.length)return "";
+ return '<div class="sub">دستورات باز این دامدار ('+fa(items.length)+')</div>'+items.map(function(x){return '<div class="item"><b>'+esc(x.o.title)+'</b> <span class="tag">'+esc(x.o.type)+'</span><div class="meta">'+esc(x.st.status)+' · از بازدید '+esc(fa(dateOf(x.r)))+(x.o.due?' · مهلت پیگیری '+esc(fa(x.o.due)):'')+'</div><p><button type="button" class="ghost sm" data-view="'+x.r.id+'">مشاهده بازدید</button></p></div>'}).join("")}
+function ordersDetail(a,r){var h="",os=r.orders||[],cs=r.orderChecks||[];
+ if(os.length){h+='<div class="sub">دستورات و اقدامات دامپزشکی ('+fa(os.length)+')</div>';
+  os.forEach(function(o){var st=orderState(a,r,o,null),sm=ordSummary(o);
+   h+='<div class="item"><div class="h"><span><b>'+esc(o.title)+'</b></span><span><span class="tag">'+esc(o.type)+'</span></span></div>'+(sm?'<div class="meta">'+esc(sm)+'</div>':'')
+    +'<div class="kv">'+kv("تاریخ شروع",o.start?esc(fa(o.start)):"")+kv("مهلت پیگیری",o.due?esc(fa(o.due)):"")+kv("توضیحات",esc(o.notes).replace(/\n/g,"<br>"))+'</div>'
+    +'<div class="meta">وضعیت فعلی: <b>'+esc(st.status)+'</b>'+(st.hist.length>1?' (طبق آخرین پیگیری '+esc(fa(st.date))+')':'')+'</div>'
+    +'<ul class="hist">'+st.hist.map(function(x){return '<li>'+esc(fa(x.date))+' — '+esc(x.status)+(x.note?' — '+esc(x.note):'')+' <span class="meta">('+esc(x.src)+')</span>'+(x.rid!==r.id?' <button type="button" class="lnk act" data-view="'+x.rid+'">مشاهده بازدید</button>':'')+'</li>'}).join("")+'</ul></div>'})}
+ if(cs.length){h+='<div class="sub">نتایج پیگیری دستورات قبلی ('+fa(cs.length)+')</div>';
+  cs.forEach(function(c){var rr=a.filter(function(x){return x.id===c.ref})[0],oo=rr&&(rr.orders||[]).filter(function(x){return x.id===c.ord})[0],ok=rr&&oo&&rr.ownerId&&rr.ownerId===r.ownerId;
+   h+='<div class="item">'+(ok?'<b>'+esc(oo.title)+'</b> <span class="meta">(دستور بازدید '+esc(fa(dateOf(rr)))+')</span> <button type="button" class="lnk act" data-view="'+rr.id+'">مشاهده</button>':'<span class="meta">این نتیجه به دستوری مربوط است که در پرونده فعلی در دسترس نیست؛ در داده‌ها حفظ شده است.</span>')
+    +'<div class="meta">وضعیت ثبت‌شده: '+esc(c.status)+(c.date?' · '+esc(fa(c.date)):'')+(c.note?' · '+esc(c.note):'')+'</div></div>'})}
+ return h}
+function renderOrdList(){var box=$("ordlist");$("ordcount").textContent=ordDraft.length?"("+fa(ordDraft.length)+")":"";
+ box.innerHTML=ordDraft.map(function(o,i){var sm=ordSummary(o);
+  return '<div class="ordit"><div class="h"><span><b>'+esc(o.title)+'</b> <span class="tag">'+esc(o.type)+'</span></span></div>'+(sm?'<div class="meta">'+esc(sm)+'</div>':'')
+   +'<select data-ost="'+i+'" aria-label="وضعیت اجرا">'+OSTAT.map(function(x){return '<option'+(x===o.status?' selected':'')+'>'+esc(x)+'</option>'}).join("")+'</select>'
+   +'<div><button type="button" class="ghost sm" data-oedit="'+i+'">ویرایش</button><button type="button" class="ghost sm" data-odel="'+i+'">حذف</button></div></div>'}).join("")}
+function ordTypeUi(){var t=$("o-type").value;$("o-druglbl").textContent=t===OTYPES[4]?"نام آزمایش یا نمونه":"نام دارو یا ماده";if(t===OTYPES[0]||t===OTYPES[2]||t===OTYPES[3])$("o-more").open=true}
+function openOrdEditor(i){ordEditIdx=i;var o=i>=0?ordDraft[i]:{type:OTYPES[0],status:OSTAT[0]};
+ $("o-type").value=o.type;$("o-title").value=o.title||"";$("o-drug").value=o.drug||"";$("o-dose").value=o.dose||"";$("o-unit").value=o.unit||"";$("o-route").value=o.route||"";$("o-freq").value=o.freq||"";$("o-dur").value=o.duration||"";
+ $("o-start").value=o.start?fa(o.start):"";$("o-due").value=o.due?fa(o.due):"";$("o-notes").value=o.notes||"";$("o-status").value=o.status||OSTAT[0];$("o-last").value=o.lastFollow?fa(o.lastFollow):"";$("o-snote").value=o.statusNote||"";
+ ["o-title","o-start","o-due","o-last"].forEach(function(k){setErr(k,"")});setErr("orders","");
+ $("o-more").open=!!(o.drug||o.dose||o.unit||o.route||o.freq||o.duration);ordTypeUi();$("ordedit").hidden=false;$("ordadd").hidden=true;$("o-title").focus()}
+function closeOrdEditor(){ordEditIdx=-1;$("ordedit").hidden=true;$("ordadd").hidden=false}
+function saveOrdEditor(){var ok=true,t=$("o-title").value.trim();
+ setErr("o-title",t?"":"عنوان یا شرح دستور را بنویسید.");if(!t)ok=false;
+ var dt={};[["o-start","start"],["o-due","due"],["o-last","lastFollow"]].forEach(function(p){var v=$(p[0]).value.trim(),x=v?parseJ(v):"";setErr(p[0],(v&&!x)?"تاریخ را به شکل ۱۴۰۵/۰۸/۰۱ بنویسید.":"");if(v&&!x)ok=false;dt[p[1]]=x||""});
+ if(!ok)return;
+ var cur=ordEditIdx>=0?ordDraft[ordEditIdx]:null,o={id:cur?cur.id:newDid(),type:$("o-type").value,title:t,drug:$("o-drug").value.trim(),dose:$("o-dose").value.trim(),unit:$("o-unit").value.trim(),route:$("o-route").value.trim(),freq:$("o-freq").value.trim(),duration:$("o-dur").value.trim(),start:dt.start,due:dt.due,notes:$("o-notes").value.trim(),status:$("o-status").value,statusNote:$("o-snote").value.trim(),lastFollow:dt.lastFollow};
+ o=cleanOrders([o])[0];if(ordEditIdx>=0)ordDraft[ordEditIdx]=o;else ordDraft.push(o);
+ closeOrdEditor();renderOrdList();setErr("orders","")}
+function ordCheckCount(rid,oid){var n=0;load().forEach(function(r){(r.orderChecks||[]).forEach(function(c){if(c.ref===rid&&c.ord===oid)n++})});return n}
+function renderChecks(){var box=$("fucheck"),L=$("fuchecklist");L.innerHTML="";chkShown=[];
+ var baseId=$("fubase").value;
+ if(!curOwnerId||!baseId){box.hidden=true;chkKeep=editChecks.slice();return}
+ var a=load(),items=chainOrders(a,baseId,editingId||null),keys={};
+ items.forEach(function(it){keys[it.rep.id+":"+it.o.id]=1});chkKeep=editChecks.filter(function(c){return !keys[c.ref+":"+c.ord]});chkShown=items;
+ if(!items.length){box.hidden=true;return}
+ box.hidden=false;
+ L.innerHTML=items.map(function(it){var k=it.rep.id+":"+it.o.id,ex=editChecks.filter(function(c){return c.ref===it.rep.id&&c.ord===it.o.id})[0],dr=chkDraft[k]||(ex?{status:ex.status,note:ex.note,date:ex.date}:{status:"",note:"",date:""});chkDraft[k]=dr;var sm=ordSummary(it.o);
+  return '<div class="ordit" data-ck="'+k+'"><div><b>'+esc(it.o.title)+'</b> <span class="tag">'+esc(it.o.type)+'</span></div><div class="meta">بازدید '+esc(fa(dateOf(it.rep)))+(sm?' · '+esc(sm):'')+'</div><div class="meta">وضعیت فعلی: <b>'+esc(it.st.status)+'</b></div>'
+   +'<select class="ck-st" aria-label="وضعیت جدید"><option value="">بدون تغییر وضعیت</option>'+OSTAT.map(function(x){return '<option'+(x===dr.status?' selected':'')+'>'+esc(x)+'</option>'}).join("")+'</select>'
+   +'<input type="text" class="ck-note" placeholder="نتیجه یا توضیح پیگیری" maxlength="300" value="'+esc(dr.note)+'"><div class="dwrap"><input type="text" class="ck-date" inputmode="numeric" placeholder="تاریخ پیگیری (پیش‌فرض: تاریخ همین ویزیت)" value="'+esc(dr.date?fa(dr.date):"")+'"><button type="button" class="dpbtn" aria-label="انتخاب تاریخ از تقویم">'+CALICON+'</button></div></div></div>'}).join("")}
+function collectChecks(){var out=chkKeep.slice(),a=load();
+ chkShown.forEach(function(it){var k=it.rep.id+":"+it.o.id,dr=chkDraft[k];if(!dr)return;var st=orderState(a,it.rep,it.o,editingId||null),note=(dr.note||"").trim().slice(0,300);
+  if((dr.status&&dr.status!==st.status)||note)out.push({ref:it.rep.id,ord:it.o.id,status:dr.status||st.status,note:note,date:parseJ(dr.date||"")||parseJ($("vdate").value)||""})});
+ return cleanChecks(out)}
+function ordersDirtyError(){var bad=false;
+ if(!$("ordedit").hidden){setErr("orders","یک دستور در حال ویرایش است؛ آن را «ثبت این دستور» کنید یا «انصراف» بزنید.");return true}
+ chkShown.forEach(function(it){var dr=chkDraft[it.rep.id+":"+it.o.id];if(dr&&dr.date&&dr.date.trim()&&!parseJ(dr.date))bad=true});
+ if(bad){setErr("orders","تاریخ پیگیری دستورات را به شکل ۱۴۰۵/۰۸/۰۱ بنویسید.");return true}
+ setErr("orders","");return false}
+var COLS=[["نام دامدار","t",20],["تاریخ بازدید (شمسی)","t",16],["نام دامپزشک","t",18],["نوع دام","t",12],["روستا یا محدوده","t",24],["عرض جغرافیایی","g",14],["طول جغرافیایی","g",14],["تعداد بررسی‌شده","i",16],["تعداد دارای نشانه","i",16],["درصد دارای نشانه (٪)","d",16],["کل دام‌های دامداری","i",16],["تعداد تلفات","i",12],["نشانه‌ها","t",40],["تشخیص دامپزشک","t",26],["گروه بیماری","t",18],["بیماری قابل اعلام","t",14],["وضعیت واکسیناسیون","t",22],["نوع واکسن دریافتی","t",30],["نام برند و توضیحات واکسن","t",30],["تعداد دام واکسینه‌شده","i",16],["تعداد تصویر","i",12],["نوع ویزیت","t",12],["تاریخ بازدید مبنا","t",22],["تاریخ ثبت (شمسی)","t",20]];
+function p1(r){return Math.round(r.sick/r.total*1000)/10}
+var crcT=(function(){var t=[],c,n,k;for(n=0;n<256;n++){c=n;for(k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(b){var c=-1;for(var i=0;i<b.length;i++)c=crcT[(c^b[i])&255]^(c>>>8);return (c^-1)>>>0}
+function u16(v){return [v&255,(v>>>8)&255]}
+function u32(v){return [v&255,(v>>>8)&255,(v>>>16)&255,(v>>>24)&255]}
+function zip(files){
+ var enc=new TextEncoder(),parts=[],cen=[],off=0,size=0;
+ files.forEach(function(f){var nb=enc.encode(f.n),db=enc.encode(f.d),cr=crc32(db);
+  var lh=new Uint8Array([].concat(u32(0x04034b50),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(cr),u32(db.length),u32(db.length),u16(nb.length),u16(0)));
+  parts.push(lh,nb,db);
+  cen.push(new Uint8Array([].concat(u32(0x02014b50),u16(20),u16(20),u16(0x0800),u16(0),u16(0),u16(0x21),u32(cr),u32(db.length),u32(db.length),u16(nb.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(off))),nb);
+  off+=lh.length+nb.length+db.length});
+ cen.forEach(function(x){size+=x.length});
+ var end=new Uint8Array([].concat(u32(0x06054b50),u16(0),u16(0),u16(files.length),u16(files.length),u32(size),u32(off),u16(0)));
+ return new Blob(parts.concat(cen,[end]),{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"})}
+function xe(v){return String(v).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function xlsxFrom(sheets){
+ var NS='xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"',H='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n',R='http://schemas.openxmlformats.org/officeDocument/2006/relationships';
+ function cl(i){return String.fromCharCode(65+i)}
+ function sc(c,r,v,st){return '<c r="'+cl(c)+r+'" t="inlineStr" s="'+st+'"><is><t xml:space="preserve">'+xe(v)+'</t></is></c>'}
+ function nc(c,r,v,st){return '<c r="'+cl(c)+r+'" s="'+st+'"><v>'+v+'</v></c>'}
+ var files=[],ct='',wbs='',rl='',x=0;
+ sheets.forEach(function(sh,k){
+  var rows='<row r="1" ht="34" customHeight="1">'+sh.head.map(function(h,i){return sc(i,1,h,1)}).join("")+'</row>';
+  sh.rows.forEach(function(r,j){var n=j+2;rows+='<row r="'+n+'">'+r.map(function(v,i){var f=sh.fmt[i];if(v&&typeof v==="object"){f=v.f;v=v.v}
+   return (typeof v==="number"&&isFinite(v)&&f!=="t")?nc(i,n,v,f==="i"?4:f==="g"?5:3):sc(i,n,v==null?"":v,2)}).join("")+'</row>'});
+  var last=cl(sh.head.length-1)+(sh.rows.length+1);
+  files.push({n:"xl/worksheets/sheet"+(k+1)+".xml",d:H+'<worksheet '+NS+'><sheetViews><sheetView rightToLeft="1" workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="22"/><cols>'+sh.w.map(function(w,i){return '<col min="'+(i+1)+'" max="'+(i+1)+'" width="'+w+'" customWidth="1"/>'}).join("")+'</cols><sheetData>'+rows+'</sheetData><autoFilter ref="A1:'+last+'"/></worksheet>'});
+  ct+='<Override PartName="/xl/worksheets/sheet'+(k+1)+'.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>';
+  wbs+='<sheet name="'+xe(sh.name)+'" sheetId="'+(k+1)+'" r:id="rId'+(k+1)+'"/>';
+  rl+='<Relationship Id="rId'+(k+1)+'" Type="'+R+'/worksheet" Target="worksheets/sheet'+(k+1)+'.xml"/>';x=k+2});
+ var bd='<border><left style="thin"><color rgb="FFB8C7C3"/></left><right style="thin"><color rgb="FFB8C7C3"/></right><top style="thin"><color rgb="FFB8C7C3"/></top><bottom style="thin"><color rgb="FFB8C7C3"/></bottom><diagonal/></border>';
+ function xf(num,font,fill,al){return '<xf numFmtId="'+num+'" fontId="'+font+'" fillId="'+fill+'" borderId="1" xfId="0" applyNumberFormat="1" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"><alignment '+al+'/></xf>'}
+ var styles=H+'<styleSheet '+NS+'><numFmts count="2"><numFmt numFmtId="164" formatCode="0.0"/><numFmt numFmtId="165" formatCode="0.000000"/></numFmts><fonts count="2"><font><sz val="12"/><name val="Tahoma"/></font><font><b/><sz val="12"/><color rgb="FFFFFFFF"/><name val="Tahoma"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF1F6F5C"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="2"><border><left/><right/><top/><bottom/><diagonal/></border>'+bd+'</borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="6"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/>'+xf(0,1,2,'horizontal="center" vertical="center" wrapText="1"')+xf(0,0,0,'horizontal="right" vertical="top" wrapText="1" readingOrder="2"')+xf(164,0,0,'horizontal="center" vertical="top"')+xf(1,0,0,'horizontal="center" vertical="top"')+xf(165,0,0,'horizontal="center" vertical="top"')+'</cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>';
+ return zip([
+  {n:"[Content_Types].xml",d:H+'<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>'+ct+'</Types>'},
+  {n:"_rels/.rels",d:H+'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="'+R+'/officeDocument" Target="xl/workbook.xml"/></Relationships>'},
+  {n:"xl/workbook.xml",d:H+'<workbook '+NS+' xmlns:r="'+R+'"><sheets>'+wbs+'</sheets></workbook>'},
+  {n:"xl/_rels/workbook.xml.rels",d:H+'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'+rl+'<Relationship Id="rId'+x+'" Type="'+R+'/styles" Target="styles.xml"/></Relationships>'},
+  {n:"xl/styles.xml",d:styles}].concat(files))}
+function ordersSheets(a){var rows=[],crow=[],sh=[];
+ a.forEach(function(r){(r.orders||[]).forEach(function(o){var st=orderState(a,r,o,null);rows.push([r.owner||"",dateOf(r),r.village||"",r.type||"",o.type,o.title,o.drug,o.dose,o.unit,o.route,o.freq,o.duration,o.start,o.due,o.notes,o.status,o.statusNote,o.lastFollow,st.status,st.date,st.note])});
+  (r.orderChecks||[]).forEach(function(c){var rr=BYID[c.ref],oo=rr&&(rr.orders||[]).filter(function(x){return x.id===c.ord})[0];crow.push([r.owner||"",dateOf(r),rr?dateOf(rr):"",oo?oo.title:"(دستور در دسترس نیست)",c.status,c.date,c.note])})});
+ var t21=[];for(var i=0;i<21;i++)t21.push("t");
+ if(rows.length)sh.push({name:"دستورات",head:["نام دامدار","تاریخ بازدید","روستا","نوع دام","نوع دستور","عنوان یا شرح","دارو یا ماده","مقدار","واحد","روش","دفعات","مدت","تاریخ شروع","مهلت پیگیری","توضیحات","وضعیت ثبت‌شده","توضیح وضعیت","آخرین پیگیری (ثبت اولیه)","وضعیت فعلی","تاریخ وضعیت فعلی","توضیح وضعیت فعلی"],fmt:t21,w:[18,14,18,10,20,30,18,10,12,16,16,14,12,14,30,20,24,14,20,14,24],rows:rows});
+ if(crow.length)sh.push({name:"پیگیری دستورات",head:["نام دامدار","تاریخ ویزیت پیگیری","تاریخ ویزیت دستور","دستور","وضعیت ثبت‌شده","تاریخ پیگیری","توضیح"],fmt:["t","t","t","t","t","t","t"],w:[18,16,16,30,20,14,30],rows:crow});
+ return sh}
+function buildXlsx(a){BYID={};a.forEach(function(r){BYID[r.id]=r});return xlsxFrom([{name:"گزارش‌ها",head:COLS.map(function(c){return c[0]}),fmt:COLS.map(function(c){return c[1]}),w:COLS.map(function(c){return c[2]}),rows:a.map(rowOf)}].concat(ordersSheets(a)))}
+function exportFile(kind,pm,warn){
+ var a=load();
+ if(!a.length){toast("هنوز گزارشی برای خروجی گرفتن ثبت نشده است.");return}
+ if(kind==="epi"&&!epiRows(a).length){toast("گزارشی مطابق فیلترها نیست.");return}
+ var blob=kind==="epi"?epiBook(a):kind==="xlsx"?buildXlsx(a):new Blob([JSON.stringify({app:"damnegar",version:4,exported:Date.now(),reports:a,photos:pm||{}})],{type:"application/json"});
+ var d=new Date(),name=(kind==="json"?"damnegar-backup-":kind==="epi"?"damnegar-epi-":"damnegar-reports-")+d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)+"."+(kind==="json"?"json":"xlsx");
+ function mark(){if(kind==="json"&&!warn){try{localStorage.setItem("damnegar:backup",String(Date.now()))}catch(e){}updPers()}}
+ function plain(){var u=URL.createObjectURL(blob),l=document.createElement("a");l.href=u;l.download=name;document.body.appendChild(l);l.click();l.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000);mark();toast("فایل خروجی ساخته شد."+(warn||""))}
+ if(window.claude&&window.claude.use){
+  window.claude.use("downloads").then(function(dl){
+   if(!dl){plain();return}
+   dl.save({filename:name,data:blob}).then(function(){mark();toast("فایل خروجی ساخته شد."+(warn||""))},function(e){if(!e||e.code!=="declined")toast("ذخیره فایل در این محیط ممکن نشد.")})
+  },function(){plain()})
+ }else plain()}
+$("bak").addEventListener("click",function(){
+ var a=load();if(!a.length){toast("هنوز گزارشی برای پشتیبان‌گیری ثبت نشده است.");return}
+ var need=[];a.forEach(function(r){(r.photos||[]).forEach(function(i){need.push(i)})});
+ (need.length?allPh():Promise.resolve([])).then(function(l){
+  var all={},pm={},miss=0;l.forEach(function(x){all[x.id]=x.data});
+  need.forEach(function(i){if(all[i])pm[i]=all[i];else miss++});
+  exportFile("json",pm,miss?" هشدار: "+fa(miss)+" تصویر ارجاع‌شده در حافظه مرورگر پیدا نشد و در پشتیبان نیست.":"")
+ },function(){toast("خواندن تصویرها از حافظه مرورگر ممکن نشد؛ برای جلوگیری از پشتیبان ناقص، فایلی ساخته نشد.")})});
+$("rst").addEventListener("click",function(){$("rfile").click()});
+$("rfile").addEventListener("change",function(){
+ var f=this.files&&this.files[0],inp=this;if(!f)return;
+ if(f.size>209715200){toast("فایل بیش از حد بزرگ است.");inp.value="";return}
+ var rd=new FileReader();
+ rd.onload=function(){var data;
+  try{data=JSON.parse(rd.result)}catch(e){toast("فایل خراب یا ناقص است و خوانده نشد؛ چیزی تغییر نکرد.");inp.value="";return}
+  var list=data&&data.app==="damnegar"&&Array.isArray(data.reports)?data.reports:null;
+  if(!list){toast("این فایل پشتیبان دام‌نگار نیست؛ چیزی تغییر نکرد.");inp.value="";return}
+  if(data.version!==undefined&&(!Number.isInteger(data.version)||data.version>4)){toast("این فایل با نسخه‌ی جدیدتری از دام‌نگار ساخته شده و خوانده نشد؛ چیزی تغییر نکرد.");inp.value="";return}
+  var cur=load(),curById={},bad=0,dup=0,conf=0,cfix=0,cph=0,seen={},inc=[];
+  cur.forEach(function(r){if(r&&r.id&&!curById[r.id])curById[r.id]=r});
+  var pm=(data.photos&&typeof data.photos==="object")?data.photos:{};
+  function fresh(){var i;do{i=Date.now().toString(36)+Math.random().toString(36).slice(2,6)}while(curById[i]||seen[i]);return i}
+  list.forEach(function(x){var c=cleanRec(x,pm);if(!c){bad++;return}
+   var pr=curById[c.id]||seen[c.id];
+   if(pr){if(sameRec(pr,c)){dup++;return}c.id=fresh();conf++}
+   seen[c.id]=c;inc.push(c);cfix+=fixes(x,c)+ordDrops(x,c);cph+=missingPh(x,c)});
+  if(!inc.length){inp.value="";toast("چیزی برای بازیابی نبود: "+fa(dup)+" گزارش از قبل موجود بود"+(bad?"، "+fa(bad)+" نامعتبر ردشد":"")+"؛ چیزی تغییر نکرد.");return}
+  var all=cur.concat(inc);assignOwnerIds(all,inc);var lk=restoredLinks(all,inc);
+  var want={},remap={},failed={};inc.forEach(function(c){c.photos.forEach(function(i){want[i]=1})});
+  Promise.all(Object.keys(want).map(function(i){return getPh(i).then(function(ex){var tid=i;if(ex&&ex!==pm[i]){tid=newId();remap[i]=tid}
+   return putPh(tid,pm[i]).then(function(){},function(){failed[tid]=1})})})).then(function(){
+   var nf=Object.keys(failed).length;inc.forEach(function(c){c.photos=c.photos.map(function(i){return remap[i]||i}).filter(function(i){return !failed[i]})});
+   var saved=save(all);render();inp.value="";
+   var bl=lk.self+lk.cross+lk.cycle;
+   var m=fa(inc.length)+" گزارش بازیابی شد"+(dup?"، "+fa(dup)+" تکراری ردشد":"")+(bad?"، "+fa(bad)+" نامعتبر ردشد":"")
+    +(conf?"؛ هشدار: "+fa(conf)+" گزارش با شناسه تکراری و محتوای متفاوت، به‌صورت گزارش جدا وارد شد":"")
+    +(cfix?"؛ هشدار: "+fa(cfix)+" مقدار نامعتبر در گزارش‌ها خالی یا اصلاح شد":"")
+    +(bl?"؛ هشدار: "+fa(bl)+" ارتباط پیگیری نامعتبر (به خودش، بین دو دامدار متفاوت یا چرخه‌ای) قطع شد":"")
+    +(lk.dangling?"؛ توجه: "+fa(lk.dangling)+" پیگیری، گزارش مبنای خود را در حافظه ندارد (ارتباط نگه داشته شد)":"")
+    +(cph?"؛ هشدار: "+fa(cph)+" تصویر در فایل پشتیبان نبود یا نامعتبر بود":"")
+    +(nf?"؛ هشدار: "+fa(nf)+" تصویر در حافظه مرورگر ذخیره نشد":"");
+   toast(saved?m+".":"هشدار: ذخیره گزارش‌ها در حافظه مرورگر انجام نشد (فقط تا بستن صفحه می‌مانند)! "+m+".")})};
+ rd.onerror=function(){toast("خواندن فایل ممکن نشد.");inp.value=""};
+ rd.readAsText(f)});
+$("dx").addEventListener("change",syncDx);
+function addFiles(inp){var fs=Array.prototype.slice.call(inp.files||[]),room=3-pend.length,st=$("phst");setErr("photos","");
+ if(!fs.length)return;
+ if(fs.length>room)setErr("photos","حداکثر ۳ تصویر برای هر گزارش؛ فقط "+fa(room)+" تصویر اول اضافه شد.");
+ var todo=fs.slice(0,room),done=0,fail=[];st.textContent="در حال پردازش "+fa(todo.length)+" تصویر… (روی گوشی ممکن است چند ثانیه طول بکشد)";
+ todo.reduce(function(p,f){return p.then(function(){return compress(f).then(function(d){pend.push({id:newId(),data:d,isNew:true});renderPForm();done++},function(e){fail.push((f.name||"تصویر")+" ("+(f.type||"نوع نامشخص")+"، "+fa(Math.round(f.size/1024))+" کیلوبایت): "+((e&&e.message)||"خطا"))})})},Promise.resolve()).then(function(){
+  inp.value="";renderPForm();if(done)st.textContent=fa(done)+" تصویر اضافه شد."+(phMode==="idb"?"":" (حالت محدود)");
+  if(fail.length)setErr("photos","خواندن تصویر ممکن نشد — "+fail.join("؛ ")+". اگر عکس با فرمت HEIC است، فرمت دوربین را روی JPEG بگذارید یا «گرفتن عکس با دوربین» را امتحان کنید.")})}
+["pfile","pcam"].forEach(function(i){$(i).addEventListener("change",function(){addFiles(this)})});
+Array.prototype.forEach.call(document.querySelectorAll(".lbtn"),function(l){l.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();$(l.getAttribute("for")).click()}})});
+$("lb").addEventListener("click",function(){this.hidden=true;$("lbi").src=""});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){if(!$("lb").hidden){$("lb").hidden=true;return}if(!$("jcal").hidden){calClose();return}if(!$("choice").hidden){if(window.__chCancel)window.__chCancel();return}if(!$("sheet").hidden){$("sheet").hidden=true;return}if(!$("rdetail").hidden){$("rdetail").hidden=true;return}if(!$("ownerpage").hidden){$("ownerpage").hidden=true;curProfile=null;return}if(!$("about").hidden)closeAbout()}});
+var APP={ver:"۰٫۹٫۱۳",contact:""};
+function openAbout(){var n=0;try{n=load().length}catch(e){}
+ $("abpers").textContent="وضعیت این دستگاه: "+fa(n)+" گزارش ثبت‌شده · "+$("pers").textContent;
+ $("contact").textContent=APP.contact||"هنوز تعیین نشده است";$("about").hidden=false;$("about").scrollTop=0;$("abx").focus({preventScroll:true})}
+function closeAbout(){$("about").hidden=true;$("aboutbtn").focus()}
+Array.prototype.forEach.call(document.querySelectorAll(".ver"),function(e){e.textContent=APP.ver});
+$("aboutbtn").addEventListener("click",openAbout);$("abx").addEventListener("click",closeAbout);
+$("about").addEventListener("click",function(e){if(e.target===this)closeAbout()});
+
+var _r=render;render=function(){_r();fillThumbs();renderEpi();updPers();refreshLists()};
+function pageClick(e){var g=e.target;if(!g||!g.getAttribute)return;
+ if(g.getAttribute("data-ph")){if(g.src)openLb(g.src);return}
+ var v;
+ if((v=g.getAttribute("data-oid"))){openProfile(v);return}
+ if((v=g.getAttribute("data-view"))){showReport(v);return}
+ if((v=g.getAttribute("data-fu"))){startFollowUp(v);return}
+ if(g.getAttribute("data-print")){document.body.dataset.print="report";window.print();return}
+ if((v=g.getAttribute("data-sheet"))){openSheet(v,false);return}
+ if((v=g.getAttribute("data-sheetprint"))){openSheet(v,true);return}
+ if((v=g.getAttribute("data-edit2"))){closeOverlays();startEdit(v);return}
+ if((v=g.getAttribute("data-merge"))){if(confirm("پرونده این دامدار هم‌نام در همین پرونده ادغام شود؟\nفقط پرونده‌ها به هم وصل می‌شوند و اطلاعات گزارش‌ها تغییر نمی‌کند.")){var left=load().filter(function(r){return r.ownerId===v}).length,ok=mergeOwners(v,curProfile);render();openProfile(curProfile);toast(ok?"پرونده‌ها ادغام شدند ("+fa(left)+" گزارش منتقل شد).":"هشدار: ذخیره در حافظه مرورگر انجام نشد؛ ادغام فقط تا بستن صفحه می‌ماند.")}return}
+ if((v=g.getAttribute("data-split"))){var A=load(),info=followInfo(A,v);if(!info.r)return;
+  var go=function(mode){var out=doSplit(v,mode);render();var g2=load().filter(function(r){return r.id===v})[0];if(g2)openProfile(g2.ownerId);
+   toast(out.saved?"گزارش جدا شد"+(out.moved>1?" و "+fa(out.moved-1)+" پیگیری وابسته هم منتقل شد":"")+(out.detached?"؛ ارتباط "+fa(out.detached)+" پیگیری با این گزارش قطع شد":"")+".":"هشدار: ذخیره در حافظه مرورگر انجام نشد؛ تغییر فقط تا بستن صفحه می‌ماند.")};
+  if(info.deps||info.kids){askDeps(info,"جدا کردن گزارش از پرونده").then(function(m){if(m)go(m)})}
+  else if(confirm("این گزارش از پرونده فعلی جدا شود و پرونده‌ی تازه‌ای برای آن ساخته شود؟"+(info.r.baseId?"\nارتباط آن با گزارش مبنای قبلی‌اش قطع می‌شود.":"")+"\nمحتوای گزارش تغییر نمی‌کند و بعداً می‌توان دوباره ادغام کرد."))go("move");
+  return}}
+$("ownerpage").addEventListener("click",pageClick);$("rdetail").addEventListener("click",pageClick);
+$("pgx").addEventListener("click",function(){$("ownerpage").hidden=true;curProfile=null});$("rdx").addEventListener("click",function(){$("rdetail").hidden=true});
+$("fuopen").addEventListener("click",function(){if(curOwnerId)openProfile(curOwnerId)});
+$("fubase").addEventListener("change",renderChecks);
+$("fuoff").addEventListener("click",function(){curOwnerId=null;$("fubar").hidden=true;renderChecks();toast("این گزارش از پرونده جدا شد؛ هنگام ثبت، دامدار دوباره بررسی می‌شود.")});
+$("ordadd").addEventListener("click",function(){openOrdEditor(-1)});$("o-cancel").addEventListener("click",closeOrdEditor);$("o-save").addEventListener("click",saveOrdEditor);$("o-type").addEventListener("change",ordTypeUi);
+$("ordlist").addEventListener("click",function(e){var g=e.target;if(!g||!g.getAttribute)return;var ed=g.getAttribute("data-oedit"),dl=g.getAttribute("data-odel");
+ if(ed!==null&&ed!==""){openOrdEditor(+ed);return}
+ if(dl!==null&&dl!==""){var i=+dl,o=ordDraft[i];if(!o)return;var n=editingId?ordCheckCount(editingId,o.id):0;
+  if(n&&!confirm("برای این دستور "+fa(n)+" نتیجه پیگیری در ویزیت‌های بعدی ثبت شده است. با حذف دستور، آن نتایج در داده‌ها می‌مانند ولی دستور مربوطه دیگر نمایش داده نمی‌شود. ادامه می‌دهید؟"))return;
+  ordDraft.splice(i,1);if(ordEditIdx===i)closeOrdEditor();renderOrdList()}});
+$("ordlist").addEventListener("change",function(e){var g=e.target,i=g&&g.getAttribute&&g.getAttribute("data-ost");if(i!==null&&i!==undefined&&ordDraft[+i])ordDraft[+i].status=g.value});
+function ckEvt(e){var g=e.target,w=g&&g.closest&&g.closest("[data-ck]");if(!w)return;var k=w.getAttribute("data-ck"),dr=chkDraft[k]||(chkDraft[k]={status:"",note:"",date:""});
+ if(g.classList.contains("ck-st"))dr.status=g.value;else if(g.classList.contains("ck-note"))dr.note=g.value;else if(g.classList.contains("ck-date"))dr.date=g.value}
+$("fuchecklist").addEventListener("input",ckEvt);$("fuchecklist").addEventListener("change",ckEvt);
+wrapDate("vdate",false);wrapDate("ffrom",true);wrapDate("fto",true);wrapDate("o-start",true);wrapDate("o-due",true);wrapDate("o-last",true);
+$("jc-py").addEventListener("click",function(){calMove(-1,0)});$("jc-ny").addEventListener("click",function(){calMove(1,0)});$("jc-pm").addEventListener("click",function(){calMove(0,-1)});$("jc-nm").addEventListener("click",function(){calMove(0,1)});
+$("jc-y").addEventListener("change",function(){cal.y=+this.value;calRender()});$("jc-m").addEventListener("change",function(){cal.m=+this.value;calRender()});
+$("jc-grid").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("button[data-d]");if(b)calSet(fa(cal.y+"/"+p2(cal.m)+"/"+p2(+b.getAttribute("data-d"))))});
+$("jc-today").addEventListener("click",function(){calSet(fa(todayJ()))});$("jc-clear").addEventListener("click",function(){calSet("")});$("jc-x").addEventListener("click",calClose);
+$("jcal").addEventListener("click",function(e){if(e.target===this)calClose()});
+$("fuchecklist").addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".dpbtn"),i=b?b.parentNode.querySelector(".ck-date"):(coarse&&e.target.classList&&e.target.classList.contains("ck-date")?e.target:null);if(i)openCal(i,true)});
+$("fuchecklist").addEventListener("change",function(e){var g=e.target;if(g&&g.classList&&g.classList.contains("ck-date")){var v=parseJ(g.value);if(v)g.value=fa(v)}});
+$("vdate").addEventListener("input",vdCheck);$("fubase").addEventListener("change",vdCheck);
+$("lq").addEventListener("input",function(){_r();fillThumbs()});$("lsort").addEventListener("change",function(){_r();fillThumbs()});
+$("owner").addEventListener("input",function(){refreshVillages();$("h-owner").hidden=true});$("owner").addEventListener("change",function(){dupHint("owner");ownerPicked()});
+$("village").addEventListener("input",function(){$("h-village").hidden=true;delete this.dataset.pre});$("village").addEventListener("focus",function(){var el=this;if(el.dataset.pre==="1")setTimeout(function(){el.select()},0)});$("village").addEventListener("change",function(){dupHint("village")});
+["ftype","fdx"].forEach(function(i){$(i).addEventListener("change",renderEpi)});["ffrom","fto"].forEach(function(i){$(i).addEventListener("input",renderEpi)});
+$("epix").addEventListener("click",function(){exportFile("epi")});
+$("geobtn").addEventListener("click",getGeo);
+["lat","lon"].forEach(function(i){$(i).addEventListener("input",function(){geoAcc=null;$("geost").textContent="";syncGeo()})});
+$("vac").addEventListener("change",syncVac);
+Array.prototype.forEach.call(document.querySelectorAll("input[name=type]"),function(i){i.addEventListener("change",function(){rebuildDx(true)})});
+$("expx").addEventListener("click",function(){exportFile("xlsx")});
+mem=load();var migrated=ensureOwnerIds();render();live();if(migrated!==0)setTimeout(function(){toast(migrated>0?"پرونده دامداران بررسی و برای گزارش‌های قبلی ساخته شد (نسخه ایمن قبلی نگه‌داری شد).":migrated===-1?"هشدار: فضای کافی برای نسخه ایمن نبود؛ ساخت پرونده دامداران انجام نشد و چیزی تغییر نکرد.":"هشدار: ذخیره پرونده دامداران در حافظه مرورگر انجام نشد؛ تا بستن صفحه معتبر است.")},600);$("vdate").value=fa(todayJ());rebuildDx();buildVax();syncVac();renderPForm();initPersist();phSelfTest();
+(function(){
+ function sa(){return window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches}
+ function net(){$("offb").hidden=navigator.onLine!==false}
+ window.addEventListener("online",net);window.addEventListener("offline",net);net();
+ var ip=null;
+ window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();ip=e;$("instbtn").hidden=false});
+ window.addEventListener("appinstalled",function(){ip=null;$("instbtn").hidden=true;$("instst").textContent="برنامه نصب شد."});
+ $("instbtn").addEventListener("click",function(){if(!ip)return;ip.prompt();ip.userChoice.then(function(){ip=null;$("instbtn").hidden=true})});
+ var secure=location.protocol==="https:"||location.hostname==="localhost"||location.hostname==="127.0.0.1";
+ $("instst").textContent=sa()?"اکنون به‌صورت برنامه نصب‌شده اجرا می‌شود.":(secure?"":"این صفحه با آدرس https باز نشده؛ نصب و کار بدون اینترنت فعال نیست.");
+ if(!("serviceWorker" in navigator)||!secure)return;
+ var reloading=false;
+ navigator.serviceWorker.register("sw.js").then(function(reg){
+  function showUpd(w){$("upd").hidden=false;$("updbtn").onclick=function(){reloading=true;w.postMessage({type:"SKIP_WAITING"})}}
+  if(reg.waiting&&navigator.serviceWorker.controller)showUpd(reg.waiting);
+  reg.addEventListener("updatefound",function(){var n=reg.installing;if(!n)return;n.addEventListener("statechange",function(){if(n.state==="installed"&&navigator.serviceWorker.controller)showUpd(n)})});
+  setInterval(function(){reg.update().catch(function(){})},6*3600*1000);
+ },function(){});
+ navigator.serviceWorker.addEventListener("controllerchange",function(){if(reloading)location.reload()});
+})();
+})();
+</script>
+</body>
+</html>
